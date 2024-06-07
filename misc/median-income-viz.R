@@ -11,20 +11,41 @@
 
 library(tidyverse)
 
-median_income <- read_csv("https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2023/main/data-raw/oregon-median-income-by-county.csv")
-
-median_income_yamhill <- median_income |>
+median_income_yamhill <- read_csv("https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2023/main/data-raw/oregon-median-income-by-county.csv") |>
   filter(geography %in% c("Yamhill", "Oregon"))
 
-ggplot(data = median_income_yamhill,
-       aes(x = TODO,
-           y = TODO,
-           label = TODO,
-           fill = TODO)) +
+ggplot(
+  data = median_income_yamhill,
+  aes(
+    x = TODO,
+    y = TODO,
+    label = TODO,
+    fill = TODO
+  )
+) +
+  
+  # This geom_col() adds the bars
   geom_col(show.legend = FALSE) +
-  geom_text(color = TODO,
-            hjust = TODO) +
+  
+  # This geom_text() adds the amount labels
+  geom_text(
+    color = TODO,
+    hjust = 1.2
+  ) +
+  
+  # This geom_text() adds Oregon and Yamhill
+  geom_text(
+    aes(
+      x = 10000,
+      label = geography
+    ),
+    color = "white"
+  ) +
+  
+  # This sets the colors of the bars
   scale_fill_manual(values = c(
     TODO
   )) +
-  theme_TODO()
+  
+  # This adjusts the theme to remove everything
+  theme_void()

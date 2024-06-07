@@ -11,9 +11,7 @@
 
 library(tidyverse)
 
-median_income <- read_csv("https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2023/main/data-raw/oregon-median-income-by-county.csv")
-
-median_income_yamhill <- median_income |>
+median_income_yamhill <- read_csv("https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2023/main/data-raw/oregon-median-income-by-county.csv") |> 
   filter(geography %in% c("Yamhill", "Oregon"))
 
 ggplot(data = median_income_yamhill,
