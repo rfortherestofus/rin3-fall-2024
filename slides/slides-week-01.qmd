@@ -351,11 +351,11 @@ https://us02web.zoom.us/j/87489928701?pwd=YnRhZWp6TnUvRllicmkvV1dVajZBUT09
 ```
 R3M-learner/
 ├── misc/
-│   ├── code
-│   ├── data-raw
-│   ├── data
-│   ├── resources
-│   ├── notes
+│   ├── code/
+│   ├── data-raw/
+│   ├── data/
+│   ├── resources/
+│   ├── notes/
 │   └── misc.Rproj
 └── project_assignment/
     └── FirstName_LastName/
