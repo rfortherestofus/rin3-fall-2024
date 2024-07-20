@@ -66,10 +66,6 @@ If you haven't yet completed the pre-survey, [please do so now](https://docs.goo
 
 ![](assets/david.jpg){.round-image}
 
-# Libby Heeren
-
-![](assets/libby.jpeg){.round-image}
-
 
 # Gracielle Higino
 
@@ -261,7 +257,7 @@ Share with the people in your breakout room:
 ## Monday
 
 - Reminder email sent out
-- Co-working session with Libby and Gracielle for first two weeks from 10:00am - 11:00am Pacific time 
+- Co-working session with Gracielle for first two weeks from 10:00am - 11:00am Pacific time 
 
 ## Wednesday
 
@@ -311,9 +307,9 @@ https://github.com/rfortherestofus/rin3-datasets
 
 ## Project Datasets
 
-- If you need to help to remove personally identifiable information, please let your coach know!
+- If you need help to remove personally identifiable information, please let Gracielle know!
 
-- Please check in with your coach via email or on Discord about your data to make sure what you're working with will serve you well
+- Please check in with Gracielle via email or on Discord about your data to make sure what you're working with will serve you well
 
 ## Discord
 
@@ -329,9 +325,7 @@ https://github.com/rfortherestofus/rin3-datasets
 
 - Mondays from 10:00am - 11:00am Pacific time ([Zoom link](https://us02web.zoom.us/j/88977029161?pwd=WmE1NDZNNEM2SkhCeklMUEpPNzl2UT09))
 
-- Review of week's content etc
-
-- Will happen during first two weeks
+- 15-20 min to review the week's content and share tips about workflow + 40-45min to co-work on an exercise.
 
 ## Live Sessions
 
@@ -346,13 +340,32 @@ https://us02web.zoom.us/j/87489928701?pwd=YnRhZWp6TnUvRllicmkvV1dVajZBUT09
 
 # Coaches
 
-- You will be assigned a coach (Libby or Gracielle) who will reach out to you this week
+- Gracielle will be your coach, and she will reach out to you this week
 
-- You can schedule 1-on-1 calls with them if you have specific questions:
-
-  - [Libby's scheduling link](https://savvycal.com/libby/30min)
+- You can schedule 1-on-1 calls with her if you have specific questions:
 
   - [Gracielle's scheduling link](https://savvycal.com/graciellehigino/30min)
+  
+# Set up your study environemnt
+
+```
+R3M-learner/
+├── misc/
+│   ├── code
+│   ├── data-raw
+│   ├── data
+│   ├── resources
+│   ├── notes
+│   └── misc.Rproj
+└── project_assignment/
+    └── FirstName_LastName/
+        ├── code/
+        ├── data-raw/
+        ├── data/
+        └── FirstName_LastName.Rproj
+ 
+```
+:warning: For your project assignment, you will use the same R project every week and send us the compressed `FirstName_LastName` folder.
 
 # Getting Started Questions {.inverse}
 
