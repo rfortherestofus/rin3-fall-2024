@@ -77,7 +77,7 @@ If you haven't yet completed the pre-survey, [please do so now](https://docs.goo
 ## Where are you from?
 
 ```{r}
-gs4_auth("david@rfortherestofus.com")
+gs4_auth(Sys.getenv("GOOGLE_SHEETS_EMAIL"))
 
 participants <-
   read_sheet(
