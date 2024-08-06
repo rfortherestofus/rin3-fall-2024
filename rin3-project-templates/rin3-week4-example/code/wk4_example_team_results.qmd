@@ -1,0 +1,113 @@
+---
+title: "Historical NCAA (Mens) Tournament Success"
+author: "Dalton Bailey"
+format: 
+  html:
+    code-link: true
+execute:
+  warning: false
+  message: false
+  # echo: false
+code-fold: true
+code-summary: see code
+code-tools: true
+
+---
+```{r}
+#| code-summary: "set up"
+#| output: false
+library(tidyverse)
+library(janitor)
+library(here)
+```
+
+```{r}
+#| output: false
+#| code-summary: "load data"
+
+team_results <- read_csv(here("data/raw/team_results.csv"))
+
+team_results <- team_results |> 
+  clean_names() |> 
+  mutate(across(c(f4percent, champpercent), 
+                ~parse_number(.) / 100))
+```
+
+# Introduction
+The men's NCAA college basketball tournament, also known as *March Madness* is an annual tournament that serves to crown a men's college basketball team as that year's champion (and make some people a lot of money). The tournament has been ongoing since 1939. The number of teams has grown over the years, and now includes 68 total teams every year. 
+
+**That's a lot of teams!** While every Division I basketball team has a chance to get into the tournament, certain schools have had sustained success in the tournament. In this analysis, we will try to identify the schools that have had the best NCAA tournament success historically. 
+
+## Selection Criteria
+Before getting into analysis, we should understand how teams are selected to participate in the tournament. First, 32 teams are automatically qualified for the tournament by winning their respective conference tournaments (examples of conferences are Big 10, MAC, Atlantic Sun, etc.).
+
+That still leaves 36 teams that need to be selected by a committee to fill out the total 68 teams. The committee selects the best remaining 36 teams based on a ranked-voting process.
+
+After there are 68 teams selected, teams are ranked based on a variety of criteria, including:
+
+- Final record
+- Strength of schedule
+- Rankings (NET & RPI)
+- Subjective comparison
+
+# Analysis 
+The data set used for this analysis was retrieved through Tidy Tuesday (week 13, 2024). This data set indicates that 236 schools have played at least one game in the NCAA tournament. For this analysis, we define *success* in the tournament as *overall win percentage*. So, schools that have won the most games and lost the fewest will be considered the most dominant. 
+
+However, we must consider the number of games played as well. Say Team A has only 4 games played, and won 3 of those games. That would give Team A a 75% win percentage (and spoiler alert, put them in our top 10 for win percentages.). That does not seem correct, so we will only look at the win percentages for teams with at least 10 games played in the tournament. 
+
+```{r}
+#| output: false
+
+results_10_win_plus <- team_results |> 
+  select(team, games, winpercent) |> 
+  filter(games >= 10) |> 
+  arrange(desc(winpercent)) |> 
+  mutate(win_perc_format = winpercent * 100) |> 
+  mutate(win_perc_format = sprintf("%.1f%%", win_perc_format))
+```
+
+Now, it is as simple as looking at the best win percentages for teams with at least 10 wins. We will specifically be looking at the top 10 schools to give us a good idea. 
+
+```{r}
+#| output: false
+
+results_10_win_plus_top_10 <- results_10_win_plus |> 
+  top_n(10, winpercent) |> 
+  arrange(desc(win_perc_format))
+```
+
+# Results
+The chart below shows us the top 10 win percentages for schools with at least 10 wins. As you can see, there are a lot of shades of blue (maybe that's why they call the best schools *blue bloods*). As a North Carolina native, it's nice seeing two N.C. schools in the top 10! Michigan also has two schools in the top 10, and as someone who grew up in Indiana I have mixed feelings about that (the Hoosier state is supposed to be the land of basketball!). 
+
+```{r}
+ggplot(data = results_10_win_plus_top_10,
+       mapping = aes(x = winpercent,
+                     y = reorder(team, winpercent),
+                     fill = team,
+                     label = scales::percent(winpercent,
+                                             accuracy = 0.1))) +
+  geom_col(show.legend = FALSE) +
+  geom_text(color = "white",
+            hjust = 1.3) +
+  scale_x_continuous(labels = scales::percent) +
+  labs(title = "Best Performing Schools in Men's NCAA Tournament History",
+       subtitle = "Based on highest win percentage for schools with at least 10 games played",
+       x = "Win Percentage",
+       y = NULL) +
+    scale_fill_manual(values = c(
+    "Connecticut" = "#001E62",
+    "North Carolina" = "#7BAFD4",
+    "Kansas" = "#0051BA",
+    "Kentucky" = "#0033A0",
+    "Duke" = "#001A57",
+    "Villanova" = "#003366",
+    "Louisville" = "#AD0000",
+    "Michigan St." = "#18453B",
+    "Texas Tech" = "#CC0000",
+    "Michigan" = "#00274C"
+  )) +
+  theme_minimal()
+
+```
+
+Most of these schools would probably be expected by people who follow basketball. Just about all of them have had recent success in the tournament. The only one that really sticks out to me, who is admittedly not that well-versed in college hoops history, is Texas Tech. All the other schools are pretty recognizable.
