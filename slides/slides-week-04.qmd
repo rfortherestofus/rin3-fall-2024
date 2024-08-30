@@ -47,7 +47,7 @@ Put your answer in the chat!
 1. Next week
 
 ::: {.notes}
-.rin3slidehttps://rin3spring2024.rfortherestofus.com/slides/slides-week-04.html
+.rin3slidehttps://rin3fall2024.rfortherestofus.com/slides/slides-week-04.html
 :::
 
 # Housekeeping

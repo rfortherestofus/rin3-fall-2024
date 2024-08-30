@@ -42,7 +42,7 @@ library(janitor)
 1. Next Week
 
 ::: {.notes}
-https://rin3spring2024.rfortherestofus.com/slides/slides-week-11.html
+https://rin3fall2024.rfortherestofus.com/slides/slides-week-11.html
 :::
 
 # Housekeeping

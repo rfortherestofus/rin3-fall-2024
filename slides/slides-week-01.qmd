@@ -50,7 +50,7 @@ world_sf <- countries110 |>
 1. Next Week
 
 ::: {.notes}
-http://rin3spring2024.rfortherestofus.com/slides/slides-week-01.html
+http://rin3fall2024.rfortherestofus.com/slides/slides-week-01.html
 :::
 
 # Survey
@@ -346,7 +346,7 @@ https://us02web.zoom.us/j/87489928701?pwd=YnRhZWp6TnUvRllicmkvV1dVajZBUT09
 
   - [Gracielle's scheduling link](https://savvycal.com/graciellehigino/30min)
   
-# Set up your study environemnt
+# How to Organize Your Files in R in 3 Months
 
 ```
 R3M-learner/

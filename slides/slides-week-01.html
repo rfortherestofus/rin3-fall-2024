@@ -8,7 +8,7 @@
 <link href="slides-week-01_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="slides-week-01_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="slides-week-01_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.541">
+  <meta name="generator" content="quarto-1.5.54">
 
   <title>Welcome to R in 3 Months</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -341,7 +341,7 @@
 <li class="fragment"><p>Next Week</p></li>
 </ol>
 <aside class="notes">
-<p>http://rin3spring2024.rfortherestofus.com/slides/slides-week-01.html</p>
+<p>http://rin3fall2024.rfortherestofus.com/slides/slides-week-01.html</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -374,11 +374,6 @@
 <h1>David Keyes</h1>
 
 <img data-src="assets/david.jpg" class="round-image r-stretch"></section>
-
-<section id="libby-heeren" class="title-slide slide level1 center">
-<h1>Libby Heeren</h1>
-
-<img data-src="assets/libby.jpeg" class="round-image r-stretch"></section>
 
 <section id="gracielle-higino" class="title-slide slide level1 center">
 <h1>Gracielle Higino</h1>
@@ -444,7 +439,7 @@
 <h2>Monday</h2>
 <ul>
 <li class="fragment">Reminder email sent out</li>
-<li class="fragment">Co-working session with Libby and Gracielle for first two weeks from 10:00am - 11:00am Pacific time</li>
+<li class="fragment">Co-working session with Gracielle for first two weeks from 10:00am - 11:00am Pacific time</li>
 </ul>
 </section>
 <section id="wednesday" class="slide level2 center">
@@ -527,8 +522,8 @@
 <section id="project-datasets-1" class="slide level2 center">
 <h2>Project Datasets</h2>
 <ul>
-<li class="fragment"><p>If you need to help to remove personally identifiable information, please let your coach know!</p></li>
-<li class="fragment"><p>Please check in with your coach via email or on Discord about your data to make sure what you’re working with will serve you well</p></li>
+<li class="fragment"><p>If you need help to remove personally identifiable information, please let Gracielle know!</p></li>
+<li class="fragment"><p>Please check in with Gracielle via email or on Discord about your data to make sure what you’re working with will serve you well</p></li>
 </ul>
 </section>
 <section id="discord" class="slide level2 center">
@@ -546,8 +541,7 @@
 <h2>Co-Working Sessions</h2>
 <ul>
 <li class="fragment"><p>Mondays from 10:00am - 11:00am Pacific time (<a href="https://us02web.zoom.us/j/88977029161?pwd=WmE1NDZNNEM2SkhCeklMUEpPNzl2UT09">Zoom link</a>)</p></li>
-<li class="fragment"><p>Review of week’s content etc</p></li>
-<li class="fragment"><p>Will happen during first two weeks</p></li>
+<li class="fragment"><p>15-20 min to review the week’s content and share tips about workflow + 40-45min to co-work on an exercise.</p></li>
 </ul>
 </section>
 <section id="live-sessions" class="slide level2 center">
@@ -575,13 +569,32 @@
 <section id="coaches" class="title-slide slide level1 center">
 <h1>Coaches</h1>
 <ul>
-<li class="fragment"><p>You will be assigned a coach (Libby or Gracielle) who will reach out to you this week</p></li>
-<li class="fragment"><p>You can schedule 1-on-1 calls with them if you have specific questions:</p>
+<li class="fragment"><p>Gracielle will be your coach, and she will reach out to you this week</p></li>
+<li class="fragment"><p>You can schedule 1-on-1 calls with her if you have specific questions:</p>
 <ul>
-<li class="fragment"><p><a href="https://savvycal.com/libby/30min">Libby’s scheduling link</a></p></li>
-<li class="fragment"><p><a href="https://savvycal.com/graciellehigino/30min">Gracielle’s scheduling link</a></p></li>
+<li class="fragment"><a href="https://savvycal.com/graciellehigino/30min">Gracielle’s scheduling link</a></li>
 </ul></li>
 </ul>
+</section>
+
+<section id="set-up-your-study-environemnt" class="title-slide slide level1 center">
+<h1>Set up your study environemnt</h1>
+<pre><code>R3M-learner/
+├── misc/
+│   ├── code/
+│   ├── data-raw/
+│   ├── data/
+│   ├── resources/
+│   ├── notes/
+│   └── misc.Rproj
+└── project_assignment/
+    └── FirstName_LastName/
+        ├── code/
+        ├── data-raw/
+        ├── data/
+        └── FirstName_LastName.Rproj
+ </code></pre>
+<p>:warning: For your project assignment, you will use the same R project every week and send us the compressed <code>FirstName_LastName</code> folder.</p>
 </section>
 
 <section id="getting-started-questions" class="title-slide slide level1 inverse center">
@@ -917,18 +930,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -960,7 +962,47 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -997,7 +1039,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

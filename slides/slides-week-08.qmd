@@ -35,7 +35,7 @@ editor_options:
 1. Next Week
 
 ::: {.notes}
-https://rin3spring2024.rfortherestofus.com/slides/slides-week-08.html
+https://rin3fall2024.rfortherestofus.com/slides/slides-week-08.html
 :::
 
 # Housekeeping {.inverse}
