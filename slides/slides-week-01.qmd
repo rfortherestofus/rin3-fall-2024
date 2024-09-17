@@ -80,6 +80,8 @@ If you haven't yet completed the pre-survey, [please do so now](https://docs.goo
 
 ## Where Are You From? {.inverse}
 
+---
+
 ```{r}
 gs4_auth(Sys.getenv("GOOGLE_SHEETS_EMAIL"))
 
