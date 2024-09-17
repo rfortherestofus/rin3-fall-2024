@@ -344,16 +344,15 @@ R3M-learner/
 │   ├── notes/
 │   └── misc.Rproj
 └── project_assignment/
-    └── FirstName_LastName/
-        ├── code/
-        ├── data-raw/
-        ├── data/
-        └── FirstName_LastName.Rproj
+    ├── code/
+    ├── data-raw/
+    ├── data/
+    └── project_assignment.Rproj
  
 ```
 
 ::: {.small}
-**Warning**: For your project assignment, you will use the same R project every week and send us the compressed `FirstName_LastName` folder.
+**Warning**: For your project assignment, you will use the same R project every week and send us the compressed `project_assignment` folder.
 :::
 
 ## Live Sessions
@@ -388,9 +387,9 @@ R3M-learner/
 
 ## Project Assignment
 
-- Do some analysis on your own data
+- Ask three questions about your data
 
-- If you have used R in the past, please do more than just a simple analysis!
+- If you have used R in the past, answer your questions more than once!
 
 # A Final Message to Leave You With {.inverse}
 
