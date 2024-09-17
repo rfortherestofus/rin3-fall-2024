@@ -3,17 +3,21 @@ title: Welcome to R in 3 Months
 format:
   rfortherestofus-slides-revealjs:
     menu: false
-    progress: true
+    progress: false
     slide-number: true
     show-slide-number: print
     center: true
     incremental: true
     auto-animate: true
+    slide-level: 4
+knitr:
+  opts_chunk:
+    dev: "png"
+    dpi: 300
 execute: 
   message: false
   warning: false
   cache: false
-  # eval: false
 title-slide-attributes:
   data-background-image: assets/rru-hex-bg-gradient-dark.svg
   data-background-size: cover
@@ -57,24 +61,24 @@ http://rin3fall2024.rfortherestofus.com/slides/slides-week-01.html
 
 If you haven't yet completed the pre-survey, [please do so now](https://docs.google.com/forms/d/e/1FAIpQLSdRWALRAzMBCYKMVTCeNx4B8uh9LF8LU2xZZfY4IyDqvOZ8aw/viewform?usp=sf_link).
 
-# Welcome
+# Welcome {.inverse}
 
-# Introductions
+# Introductions {.inverse}
 
 
-# David Keyes
+# David Keyes {.center-slide}
 
 ![](assets/david.jpg){.round-image}
 
 
-# Gracielle Higino
+# Gracielle Higino {.center-slide}
 
 ![](assets/gracielle.png){.round-image}
 
 
 # Who Are You? {.inverse}
 
-## Where are you from?
+## Where Are You From? {.inverse}
 
 ```{r}
 gs4_auth(Sys.getenv("GOOGLE_SHEETS_EMAIL"))
@@ -82,7 +86,7 @@ gs4_auth(Sys.getenv("GOOGLE_SHEETS_EMAIL"))
 participants <-
   read_sheet(
     "https://docs.google.com/spreadsheets/d/1Rz7_1_CzxURdhPHRj9YAzV-tgQP6xQmY_qV0VPjhPYs/edit#gid=1655863522",
-    sheet = "Spring 2024 Participants"
+    sheet = "Fall 2024 Participants"
   ) |>
   clean_names()
 
@@ -120,7 +124,7 @@ ggplot() +
   theme_void()
 ```
 
-## How much have you used R?
+#### How much have you used R?
 
 ```{r}
 pre_survey <-
@@ -133,7 +137,7 @@ pre_survey_filtered <-
   pre_survey |>
   mutate(year = year(timestamp)) |>
   filter(
-    timestamp > ymd("2024-01-01")
+    timestamp > ymd("2024-08-01")
   ) |>
   mutate(how_much_have_you_used_r = factor(
     how_much_have_you_used_r,
@@ -178,7 +182,7 @@ pre_survey_filtered |>
   rin3_bar_chart(how_much_have_you_used_r)
 ```
 
-## How would you rate your level of expertise working with R for DATA ANALYSIS?
+#### How would you rate your level of expertise working with R for DATA ANALYSIS?
 
 ```{r}
 data_analysis_expertise <- 
@@ -195,7 +199,7 @@ data_analysis_expertise |>
   rin3_bar_chart(data_analysis_expertise)
 ```
 
-## How would you rate your level of expertise working with R for DATA VISUALIZATION?
+#### How would you rate your level of expertise working with R for DATA VISUALIZATION?
 
 ```{r}
 data_viz_expertise <-
@@ -212,7 +216,7 @@ data_viz_expertise |>
   rin3_bar_chart(data_viz_expertise)
 ```
 
-## On a scale from terrified to excited, how do you feel about the process of learning R?
+#### On a scale from terrified to excited, how do you feel about the process of learning R?
 
 ```{r}
 how_terrified <- 
@@ -231,13 +235,11 @@ how_terrified |>
 
 # Breakout Rooms {.inverse}
 
-## Breakout Rooms
+---
 
 Share with the people in your breakout room: 
 
 - Name
-
-- Pronouns
 
 - Location
 
@@ -246,6 +248,10 @@ Share with the people in your breakout room:
 - Where you hope to be in 3 months
 
 # How R in 3 Months Works {.inverse}
+
+## Calendar Event Links
+
+You can get all links to join live sessions, coworking sessions, and more in [this lesson](https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/r-in-3-months-fall-2024-calendar-event-links).
 
 ## Thursday
 
@@ -257,41 +263,36 @@ Share with the people in your breakout room:
 ## Monday
 
 - Reminder email sent out
-- Co-working session with Gracielle for first two weeks from 10:00am - 11:00am Pacific time 
+- Co-working session with Gracielle from 10-11am Pacific time 
 
 ## Wednesday
 
 - Complete course and project assignments (ideally)
 
-## Code of Conduct
+---
 
-[![](assets/code-of-conduct.png)](https://rfortherestofus.com/code-of-conduct)
+[![](assets/code-of-conduct.jpeg)](https://rfortherestofus.com/code-of-conduct)
 
-## Course Materials
+---
 
-[![](assets/rin3-course.png)](https://rfortherestofus.com/courses/r-in-3-months-spring-2024)
-
-::: {.notes}
-- Transcripts
-- Redoing GH materials
-- Show see all lessons lesson https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/all-r-in-3-months-spring-2024-videos
-:::
-
-## Course Questions
-
-![](assets/lesson-question.png)
-
-## Project Assignments
-
-[![](assets/project-assignment.jpeg)](https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/week2-project-assignment)
-
-## Feedback
-
-![](assets/feedback-example.png)
+[![](assets/rin3-fall-2024-course-content.jpeg)](https://rfortherestofus.com/courses/r-in-3-months-fall-2024)
 
 ::: {.notes}
-https://rfortherestofus.com/feedback/e3f8016b-8070-4ddd-9c0e-36eddbe57937
+- Transcripts within videos
+- Show see all lessons lesson https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/all-videos-from-r-in-3-months-fall-2024
 :::
+
+---
+
+![](assets/course-questions.png)
+
+---
+
+[![](assets/project-assignment.jpeg)](https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/fall2024-week2-project_assignment)
+
+---
+
+[![](assets/feedback.jpeg)](https://rfortherestofus.com/feedback/91e3f4b3-74ab-4c1d-9bed-e7e3fc961a0c)
 
 ## Project Datasets
 
@@ -299,7 +300,7 @@ https://rfortherestofus.com/feedback/e3f8016b-8070-4ddd-9c0e-36eddbe57937
 
 - However, sometimes people's own data can be quite complicated and not suitable for the beginning part of R in 3 Months
 
-- Libby has collected datasets better suited to where people just starting out are
+- We have collected datasets better suited to where people just starting out are
 
 ::: {.notes}
 https://github.com/rfortherestofus/rin3-datasets
@@ -315,30 +316,13 @@ https://github.com/rfortherestofus/rin3-datasets
 
 ![](assets/discord.png)
 
-## Where Questions Go
-
-- Lesson-specific questions on lessons
-
-- General questions in Discord
-
 ## Co-Working Sessions
 
-- Mondays from 10:00am - 11:00am Pacific time ([Zoom link](https://us02web.zoom.us/j/88977029161?pwd=WmE1NDZNNEM2SkhCeklMUEpPNzl2UT09))
+- Mondays from 10:00am - 11:00am Pacific time
 
 - 15-20 min to review the week's content and share tips about workflow + 40-45min to co-work on an exercise.
 
-## Live Sessions
-
-- Answer questions
-- Live coding
-- Group exercises
-- And more!
-
-::: {.notes}
-https://us02web.zoom.us/j/87489928701?pwd=YnRhZWp6TnUvRllicmkvV1dVajZBUT09
-:::
-
-# Coaches
+# Coaching
 
 - Gracielle will be your coach, and she will reach out to you this week
 
@@ -346,7 +330,7 @@ https://us02web.zoom.us/j/87489928701?pwd=YnRhZWp6TnUvRllicmkvV1dVajZBUT09
 
   - [Gracielle's scheduling link](https://savvycal.com/graciellehigino/30min)
   
-# How to Organize Your Files in R in 3 Months
+# How to Organize Your Files
 
 ```
 R3M-learner/
@@ -365,7 +349,25 @@ R3M-learner/
         └── FirstName_LastName.Rproj
  
 ```
-:warning: For your project assignment, you will use the same R project every week and send us the compressed `FirstName_LastName` folder.
+
+::: {.small}
+**Warning**: For your project assignment, you will use the same R project every week and send us the compressed `FirstName_LastName` folder.
+:::
+
+## Live Sessions
+
+- Answer questions
+- Live coding
+- Group exercises
+- And more!
+
+## Where Questions Go
+
+- Lesson-specific questions on lessons
+
+- General questions in Discord
+
+- You should always feel free to email David and Gracielle with any questions
 
 # Getting Started Questions {.inverse}
 
@@ -374,8 +376,6 @@ R3M-learner/
 - Whether packages are loaded vs installed (packages tab)
 - Dependency packages (see https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/examine-our-data-v2)
 - read.csv vs read_csv
-- Projects
-- Can you save result of scan_data (see https://rstudio.github.io/pointblank/reference/export_report.html)
 :::
 
 # Next Week {.inverse}
@@ -390,8 +390,10 @@ R3M-learner/
 
 - If you have used R in the past, please do more than just a simple analysis!
 
-# A Final Message to Leave You With
+# A Final Message to Leave You With {.inverse}
 
-. . .
+---
 
+::: {.center-slide}
 [![](assets/hadley-bad-code.png)](https://fosstodon.org/@hadleywickham/112021309035884210)
+:::
