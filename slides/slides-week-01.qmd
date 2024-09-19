@@ -302,11 +302,7 @@ You can get all links to join live sessions, coworking sessions, and more in [th
 
 - However, sometimes people's own data can be quite complicated and not suitable for the beginning part of R in 3 Months
 
-- We have collected datasets better suited to where people just starting out are
-
-::: {.notes}
-https://github.com/rfortherestofus/rin3-datasets
-:::
+- [We have collected datasets better suited to where people just starting out are](https://github.com/rfortherestofus/rin3-datasets)
 
 ## Project Datasets
 
@@ -375,8 +371,8 @@ R3M-learner/
 ::: {.notes}
 - Tidyverse loading message
 - Whether packages are loaded vs installed (packages tab)
-- Dependency packages (see https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/examine-our-data-v2)
 - read.csv vs read_csv
+- hi David and Gracielle! Quick Q: when writing the code for read_csv and all the embedded functions, the line becomes too long to read and I've noticed that David uses a shortcut to add the new functions (e.g., na and then col_types) to lines further below. Should I just press enter or is there another way of parsing the line? Thanks!
 :::
 
 # Next Week {.inverse}
