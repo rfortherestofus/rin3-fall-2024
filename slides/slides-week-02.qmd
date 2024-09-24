@@ -187,6 +187,8 @@ Source: [rstats.wtf](https://rstats.wtf/source-and-blank-slates)
 https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/an-important-workflow-tip-v2
 :::
 
+## Always save your R script files
+
 ## Parentheses matter (a lot!)
 
 What's the logic for the "-" (minus) in the second solution below being in its own parenthesis but it's not in the first solution? That tripped me up.
@@ -318,6 +320,8 @@ penguins |>
 ```
 
 > I get an error message. Maybe the answer is "That’s just how R works," but I’m trying to build a solid mental model for these functions, so if there’s anything more to it, I’d love to better understand. Thanks!
+
+
 
 # Typos happen to everone
 
