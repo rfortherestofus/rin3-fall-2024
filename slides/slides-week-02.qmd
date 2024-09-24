@@ -54,29 +54,15 @@ http://rin3fall2024.rfortherestofus.com/slides/slides-week-02.html
 
 ## Project Assignments
 
-- If you submitted a project assignment, you should receive an email notification when your coach gives you feedback
+- If you submitted a project assignment, you should receive an email notification when Gracielle gives you feedback
 
-- Coaches can answer questions relevant to the topic of the week, but can't answer everything for you
+- Gracielle can answer questions relevant to the topic of the week, but can't answer everything for you
 
-- Instead, they will share resources with you where applicable
-
-## Times and Dates
-
-- For example, many people are asking about times and dates
-
-- Check out:
-
-  - [Chapter 17 of R for Data Science](https://r4ds.hadley.nz/datetimes)
-
-  - [How to Work with Dates and Times in R](https://www.youtube.com/watch?v=ErgdivT_VKs&ab_channel=RfortheRestofUs)
-
-  - [R for the Rest of Us Resources page](https://rfortherestofus.com/resources)
-
-
+- Instead, she will share resources with you where applicable
 
 ## Datasets
 
-- Check in with your coach about a good dataset to use!
+- Check in with Gracielle about a good dataset to use!
 
 - [`rin3-datasets` repo](https://github.com/rfortherestofus/rin3-datasets)
 
@@ -92,7 +78,7 @@ http://rin3fall2024.rfortherestofus.com/slides/slides-week-02.html
 
 # Cheatsheets
 
-[Download them for yourself!](https://github.com/rfortherestofus/rin3-spring-2024/blob/main/misc/beginner-cheatsheets.pdf)
+[Download them for yourself!](https://github.com/rfortherestofus/rin3-fall-2024/blob/main/misc/beginner-cheatsheets.pdf)
 
 # `select()` {.inverse}
 
@@ -104,19 +90,19 @@ http://rin3fall2024.rfortherestofus.com/slides/slides-week-02.html
 
 # `filter()` {.inverse}
 
-<!-- # {background-video="assets/01_filter_1.mp4" background-video-loop="true" background-size="contain"} -->
+# {background-video="assets/01_filter_1.mp4" background-video-loop="true" background-size="contain"}
 
 # `summarize()` {.inverse}
 
-<!-- # {background-video="assets/05_summarise.mp4" background-video-loop="true" background-size="contain"} -->
+# {background-video="assets/05_summarise.mp4" background-video-loop="true" background-size="contain"}
 
 # `group_by() |> summarize()` {.inverse}
 
-<!-- # {background-video="assets/06_summarise_grouped.mp4" background-video-loop="true" background-size="contain"} -->
+# {background-video="assets/06_summarise_grouped.mp4" background-video-loop="true" background-size="contain"}
 
 # `arrange()` {.inverse}
 
-<!-- # {background-video="assets/03_arrange.mp4" background-video-loop="true" background-size="contain"} -->
+# {background-video="assets/03_arrange.mp4" background-video-loop="true" background-size="contain"}
 
 # Common Issues and Your Questions {.inverse}
 
@@ -128,23 +114,22 @@ http://rin3fall2024.rfortherestofus.com/slides/slides-week-02.html
 
 . . .
 
-```
+```{r}
+#| eval: false
 install.packages("tidyverse")
 ```
 
 . . .
 
+<br>
 **Load** packages once per **session**
 
 . . .
 
-```
+```{r}
+#| eval: false
 library(tidyverse)
 ```
-
-## Check your version of R (and update if necessary)
-
-![](assets/rversion.png)
 
 ## Working directories
 
@@ -199,7 +184,7 @@ Source: [rstats.wtf](https://rstats.wtf/source-and-blank-slates)
 :::
 
 ::: {.notes}
-https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/an-important-workflow-tip-v2
+https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/an-important-workflow-tip-v2
 :::
 
 ## Parentheses matter (a lot!)
@@ -210,6 +195,8 @@ What's the logic for the "-" (minus) in the second solution below being in its o
 penguins |>
   select(-species)
 ```
+
+. . .
 
 ```{r}
 penguins |>

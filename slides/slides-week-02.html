@@ -8,7 +8,7 @@
 <link href="slides-week-02_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="slides-week-02_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="slides-week-02_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.25">
+  <meta name="generator" content="quarto-1.5.54">
 
   <title>R in 3 Months Week 2 (Data Wrangling and Analysis)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -434,27 +434,15 @@
 <section id="project-assignments" class="slide level2 center">
 <h2>Project Assignments</h2>
 <ul>
-<li class="fragment"><p>If you submitted a project assignment, you should receive an email notification when your coach gives you feedback</p></li>
-<li class="fragment"><p>Coaches can answer questions relevant to the topic of the week, but can’t answer everything for you</p></li>
-<li class="fragment"><p>Instead, they will share resources with you where applicable</p></li>
-</ul>
-</section>
-<section id="times-and-dates" class="slide level2 center">
-<h2>Times and Dates</h2>
-<ul>
-<li class="fragment"><p>For example, many people are asking about times and dates</p></li>
-<li class="fragment"><p>Check out:</p>
-<ul>
-<li class="fragment"><p><a href="https://r4ds.hadley.nz/datetimes">Chapter 17 of R for Data Science</a></p></li>
-<li class="fragment"><p><a href="https://www.youtube.com/watch?v=ErgdivT_VKs&amp;ab_channel=RfortheRestofUs">How to Work with Dates and Times in R</a></p></li>
-<li class="fragment"><p><a href="https://rfortherestofus.com/resources">R for the Rest of Us Resources page</a></p></li>
-</ul></li>
+<li class="fragment"><p>If you submitted a project assignment, you should receive an email notification when Gracielle gives you feedback</p></li>
+<li class="fragment"><p>Gracielle can answer questions relevant to the topic of the week, but can’t answer everything for you</p></li>
+<li class="fragment"><p>Instead, she will share resources with you where applicable</p></li>
 </ul>
 </section>
 <section id="datasets" class="slide level2 center">
 <h2>Datasets</h2>
 <ul>
-<li class="fragment"><p>Check in with your coach about a good dataset to use!</p></li>
+<li class="fragment"><p>Check in with Gracielle about a good dataset to use!</p></li>
 <li class="fragment"><p><a href="https://github.com/rfortherestofus/rin3-datasets"><code>rin3-datasets</code> repo</a></p></li>
 </ul>
 </section>
@@ -483,7 +471,7 @@
 
 <section id="cheatsheets" class="title-slide slide level1 center">
 <h1>Cheatsheets</h1>
-<p><a href="https://github.com/rfortherestofus/rin3-spring-2024/blob/main/misc/beginner-cheatsheets.pdf">Download them for yourself!</a></p>
+<p><a href="https://github.com/rfortherestofus/rin3-fall-2024/blob/main/misc/beginner-cheatsheets.pdf">Download them for yourself!</a></p>
 </section>
 
 <section id="select" class="title-slide slide level1 inverse center">
@@ -557,19 +545,19 @@
 <p><strong>Install</strong> packages once per <strong>computer</strong></p>
 </div>
 <div class="fragment">
-<pre><code>install.packages("tidyverse")</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div class="fragment">
-<p><strong>Load</strong> packages once per <strong>session</strong></p>
+<p><br> <strong>Load</strong> packages once per <strong>session</strong></p>
 </div>
 <div class="fragment">
-<pre><code>library(tidyverse)</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
-<section id="check-your-version-of-r-and-update-if-necessary" class="slide level2 center">
-<h2>Check your version of R (and update if necessary)</h2>
-
-<img data-src="assets/rversion.png" class="r-stretch"></section>
 <section id="working-directories" class="slide level2 center">
 <h2>Working directories</h2>
 <ul>
@@ -647,7 +635,7 @@
 <p>Source: <a href="https://rstats.wtf/source-and-blank-slates">rstats.wtf</a></p>
 </div>
 <aside class="notes">
-<p>https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/an-important-workflow-tip-v2</p>
+<p>https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/an-important-workflow-tip-v2</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -667,9 +655,11 @@
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href=""></a>  <span class="fu">select</span>(<span class="sc">-</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
 <span id="cb4-2"><a href=""></a>  <span class="fu">select</span>(<span class="sc">-</span>(bill_length_mm<span class="sc">:</span>body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="parentheses-matter-a-lot-1" class="slide level2 center">

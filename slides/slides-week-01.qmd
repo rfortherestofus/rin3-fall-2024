@@ -87,7 +87,7 @@ gs4_auth(Sys.getenv("GOOGLE_SHEETS_EMAIL"))
 
 participants <-
   read_sheet(
-    "https://docs.google.com/spreadsheets/d/1Rz7_1_CzxURdhPHRj9YAzV-tgQP6xQmY_qV0VPjhPYs/edit#gid=1655863522",
+    "https://docs.google.com/spreadsheets/d/1Rz7_1_CzxURdhPHRj9YAzV-tgQP6xQmY_qV0VPjhPYs/edit?gid=1000657231#gid=1000657231",
     sheet = "Fall 2024 Participants"
   ) |>
   clean_names()
@@ -244,6 +244,8 @@ Share with the people in your breakout room:
 - Name
 
 - Location
+
+- A bit about your work
 
 - Organization (if applicable)
 

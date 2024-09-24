@@ -1,11 +1,13 @@
 library(tidyverse)
 
-penguins <- read_csv(file = "data-raw/penguins.csv")
+# NA values ---------------------------------------------------------------
+
+read_csv("data-raw/penguins_data.csv", na = "-999, -999.0")
 
 
 # NA values ---------------------------------------------------------------
 
-penguins
+penguins <- read_csv(file = "data-raw/penguins.csv")
 
 penguins |>
   mutate(not_actually_na = "NA") |>
@@ -25,6 +27,8 @@ penguins |>
 penguins |>
   # drop_na(bill_length_mm) |>
   count(species)
+
+
 
 
 
