@@ -42,6 +42,8 @@ Please put your answer in the chat!
 
 1. Common Issues and Your Questions
 
+1. Weekly Coach Tips
+
 1. Next Week
 
 ::: {.notes}
@@ -64,7 +66,7 @@ http://rin3fall2024.rfortherestofus.com/slides/slides-week-02.html
 
 - Check in with Gracielle about a good dataset to use!
 
-- [`rin3-datasets` repo](https://github.com/rfortherestofus/rin3-datasets)
+- [rin3-datasets repo](https://github.com/rfortherestofus/rin3-datasets)
 
 ## Co-Working Session {.inverse}
 
@@ -131,6 +133,18 @@ install.packages("tidyverse")
 library(tidyverse)
 ```
 
+## Function conflicts
+
+- You've seen this with the `tidyverse` loading message
+
+- It can happen with other packages
+
+- Only load packages you need to use 
+
+::: {.notes}
+https://rfortherestofus.com/courses/fundamentals/lessons/summarize-v2#comment-34375
+:::
+
 ## Working directories
 
 - RStudio projects set your working directory to be the root of the project (i.e. where you find the `.Rproj` file)
@@ -187,7 +201,7 @@ Source: [rstats.wtf](https://rstats.wtf/source-and-blank-slates)
 https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/an-important-workflow-tip-v2
 :::
 
-## Always save your R script files
+## Always save your R script files {.inverse}
 
 ## Parentheses matter (a lot!)
 

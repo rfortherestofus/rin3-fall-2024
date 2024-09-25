@@ -1,5 +1,13 @@
 library(tidyverse)
 
+
+# Working directories -----------------------------------------------------
+
+
+# Native pipe vs tidyverse pipe -------------------------------------------
+
+
+
 # NA values ---------------------------------------------------------------
 
 read_csv("data-raw/penguins_data.csv", na = "-999, -999.0")
