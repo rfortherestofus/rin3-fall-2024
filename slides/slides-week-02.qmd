@@ -356,5 +356,5 @@ get_acs(
 
 1. Course assignment: complete data viz lessons
 
-1. Project assignment: make a graph from your data
+1. Project assignment: make three plots from your data
 
