@@ -48,3 +48,6 @@ po/*~
 # RStudio Connect folder
 rsconnect/
 /slides/pdf
+
+# Mac hidden files
+*._*
