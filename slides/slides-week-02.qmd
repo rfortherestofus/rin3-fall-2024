@@ -351,6 +351,12 @@ get_acs(
 ```
 :::
 
+# Weekly coach tips
+
+1. Do **not** use generative AI!
+
+1. Don't be afraid to submit your assignments.
+
 
 # Next Week
 
