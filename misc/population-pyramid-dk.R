@@ -26,6 +26,15 @@ minnesota_population_2019 <- read_csv("data-raw/minnesota_population_2019.csv")
 # Plot --------------------------------------------------------------------
 
 minnesota_population_2019 |> 
-  mutate(population = if_else(gender == ""))
+  mutate(population = if_else(sex == "male",
+                              true = population,
+                              false = population * -1)) |> 
+  ggplot(
+    aes(x = population,
+        y = age,
+        fill = sex)
+  ) +
+  geom_col()
+  
 
 
