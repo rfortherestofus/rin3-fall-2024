@@ -1,16 +1,24 @@
 library(tidyverse)
 
-
 # Working directories -----------------------------------------------------
 
+penguins <- read_csv("data-raw/penguins_data.csv")
+
+penguins_mean_bill_length <- penguins |> 
+  filter(island == "Biscoe") |> 
+  summarize(mean_bill_length = mean(bill_length_mm, na.rm = TRUE))
 
 # Native pipe vs tidyverse pipe -------------------------------------------
 
 
+# Parentheses -------------------------------------------------------------
+
+penguins |>
+  select(-(bill_length_mm:body_mass_g))
 
 # NA values ---------------------------------------------------------------
 
-read_csv("data-raw/penguins_data.csv", na = "-999, -999.0")
+read_csv("data-raw/penguins_data.csv")
 
 
 # NA values ---------------------------------------------------------------
@@ -18,7 +26,8 @@ read_csv("data-raw/penguins_data.csv", na = "-999, -999.0")
 penguins <- read_csv(file = "data-raw/penguins.csv")
 
 penguins |>
-  mutate(not_actually_na = "NA") |>
+  mutate(not_actually_na = "NA") 
+|>
   mutate(actually_na = na_if(not_actually_na, "NA")) |>
   mutate(really_not_na = replace_na(actually_na, "NA"))
 

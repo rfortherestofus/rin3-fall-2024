@@ -133,6 +133,10 @@ install.packages("tidyverse")
 library(tidyverse)
 ```
 
+## Packages
+
+Can you set up R to always load certain packages?
+
 ## Function conflicts
 
 - You've seen this with the `tidyverse` loading message
@@ -140,6 +144,8 @@ library(tidyverse)
 - It can happen with other packages
 
 - Only load packages you need to use 
+
+- You can also use `package::function()` syntax (e.g. `dplyr::summarize()`)
 
 ::: {.notes}
 https://rfortherestofus.com/courses/fundamentals/lessons/summarize-v2#comment-34375
