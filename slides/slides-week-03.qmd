@@ -42,6 +42,8 @@ Please put your answer in the chat!
 
 1. Data viz live coding
 
+1. Weekly Coach Tips
+
 1. Next week
 
 ::: {.notes}
@@ -80,6 +82,9 @@ https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2024/main/misc/media
 
 - Let's make a population pyramid!
 
+# Weekly coach tips
+
+[The tidyverse style guide](https://style.tidyverse.org/index.html)
 
 # Next Week
 
