@@ -14,25 +14,7 @@ penguins_bill_length_by_island <- penguins |>
 
 data("gapminder")
 
-
 # Dropping Points in Scatterplots ----------------------------------------
-
-penguins |>
-  drop_na(flipper_length_mm, body_mass_g) |>
-  ggplot(mapping = aes(
-    x = flipper_length_mm,
-    y = body_mass_g,
-    color = island
-  )) +
-  geom_point() +
-  scale_color_manual(
-    values = c(
-      "Biscoe" = "grey90",
-      "Dream" = "grey90",
-      "Torgersen" = "red"
-    )
-  ) +
-  theme_minimal()
 
 ggplot(
   data = penguins,
@@ -46,6 +28,17 @@ ggplot(
     limits = c(170, 220)
   )
 
+penguins |>
+  drop_na(flipper_length_mm, body_mass_g) |>
+  ggplot(mapping = aes(
+    x = flipper_length_mm,
+    y = body_mass_g,
+    color = island
+  )) +
+  geom_point()
+
+
+
 # Bar Chart Width ---------------------------------------------------------
 
 ggplot(
@@ -56,7 +49,7 @@ ggplot(
     label = mean_bill_length
   )
 ) +
-  geom_col(width = 0.5) +
+  geom_col() +
   theme_minimal()
 
 # Center Text in Bar Chart ------------------------------------------------
@@ -71,12 +64,21 @@ ggplot(
   )
 ) +
   geom_col() +
-  geom_text(position = position_stack(vjust = 0.5)) +
+  geom_text() +
   coord_flip() +
   theme_minimal()
 
 
 # Reordering Bar Charts ---------------------------------------------------
+
+ggplot(
+  data = penguins_bill_length_by_island,
+  aes(
+    x = island,
+    y = mean_bill_length
+  )
+) +
+  geom_col()
 
 ggplot(
   data = penguins_bill_length_by_island,
@@ -144,18 +146,3 @@ ggplot(
   ) +
   theme_minimal()
 
-
-# Adjusting Legends -------------------------------------------------------
-
-ggplot(
-  data = penguins_bill_length_by_island,
-  aes(
-    x = island,
-    y = mean_bill_length,
-    label = mean_bill_length,
-    color = island
-  )
-) +
-  geom_col(show.legend = FALSE) +
-  geom_text() +
-  theme_minimal()

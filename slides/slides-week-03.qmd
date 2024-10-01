@@ -50,12 +50,6 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-03.html
 
 # Housekeeping
 
-- Website issues
-
-- You can use three back ticks to make code blocks on Discord and the website comments sections
-
-- Live session next week and catch-up week on April 11
-
 # Data Viz Tips
 
 1. Is there a "correct" order to put geoms, scales, themes, etc?
@@ -72,8 +66,6 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-03.html
 
 1. How to adjust axis text labels
 
-1. Adjusting legends
-
 # Data Viz Exercise {.inverse}
 
 ## Data Viz Exercise
@@ -81,7 +73,7 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-03.html
 ![](assets/median-income-example.png)
 
 ::: notes
-https://raw.githubusercontent.com/rfortherestofus/rin3-spring-2024/main/misc/median-income-viz.R
+https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2024/main/misc/median-income-viz.R
 :::
 
 # Data Viz Live Coding
