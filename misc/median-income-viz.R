@@ -16,10 +16,10 @@ median_income_yamhill <- read_csv("https://raw.githubusercontent.com/rfortherest
 ggplot(
   data = median_income_yamhill,
   aes(
-    x = TODO,
-    y = TODO,
-    label = TODO,
-    fill = TODO
+    x = amount,
+    y = geography,
+    label = amount_formatted,
+    fill = geography
   )
 ) +
   
@@ -28,7 +28,7 @@ ggplot(
   
   # This geom_text() adds the amount labels
   geom_text(
-    color = TODO,
+    color = "white",
     hjust = 1.2
   ) +
   
@@ -43,7 +43,7 @@ ggplot(
   
   # This sets the colors of the bars
   scale_fill_manual(values = c(
-    TODO
+    "gray", "darkgreen"
   )) +
   
   # This adjusts the theme to remove everything

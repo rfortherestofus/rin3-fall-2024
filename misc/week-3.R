@@ -3,7 +3,6 @@
 library(tidyverse)
 library(gapminder)
 
-
 # Import Data -------------------------------------------------------------
 
 penguins <- read_csv("data-raw/penguins.csv")
@@ -23,19 +22,28 @@ ggplot(
     y = body_mass_g
   )
 ) +
-  geom_point() 
-  # scale_x_continuous(
-  #   limits = c(170, 220)
-  # )
+  geom_point() +
+  scale_x_continuous(
+    limits = c(170, 200)
+  )
 
-penguins |>
+
+penguins_filtered <- penguins |>
   drop_na(flipper_length_mm, body_mass_g) |>
-  ggplot(mapping = aes(
+  filter(flipper_length_mm < 200)
+
+ggplot(
+  data = penguins_filtered,
+  mapping = aes(
     x = flipper_length_mm,
-    y = body_mass_g,
-    color = island
-  )) +
-  geom_point()
+    y = body_mass_g
+  )
+) +
+  geom_point() +
+  scale_x_continuous(
+    limits = c(170, 210),
+    breaks = seq(from = 170, to = 210, by = 1)
+  )
 
 # Bar Chart Width ---------------------------------------------------------
 
@@ -47,7 +55,7 @@ ggplot(
     label = mean_bill_length
   )
 ) +
-  geom_col() +
+  geom_col(width = 0.9) +
   theme_minimal()
 
 # Center Text in Bar Chart ------------------------------------------------
@@ -57,12 +65,19 @@ ggplot(
   aes(
     x = 1,
     y = mean_bill_length,
-    label = mean_bill_length,
     fill = island
   )
 ) +
   geom_col() +
-  geom_text() +
+  geom_text(
+    aes(
+      x = 1.5,
+      y = mean_bill_length,
+      label = mean_bill_length
+    ),
+    position = position_stack(vjust = 0.5)
+  ) +
+  scale_fill_viridis_d(option = "D") +
   coord_flip() +
   theme_minimal()
 
@@ -130,8 +145,11 @@ ggplot(
 
 penguins_bill_length_by_island
 
+penguins_bill_length_by_island_v2 <- penguins_bill_length_by_island |>
+  mutate(island = c("Island 1!", "Island 2!", "Island 3!"))
+
 ggplot(
-  data = penguins_bill_length_by_island,
+  data = penguins_bill_length_by_island_v2,
   aes(
     x = island,
     y = mean_bill_length,
@@ -139,8 +157,4 @@ ggplot(
   )
 ) +
   geom_col() +
-  scale_x_discrete(
-    labels = c("Island 1", "Island 2", "Island 3")
-  ) +
   theme_minimal()
-
