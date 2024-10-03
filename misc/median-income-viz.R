@@ -1,10 +1,9 @@
 # Your job is to update the TODOs below to recreate this visualization
 # https://show.rfor.us/4MwDlgt2
 
-# A few notes:
+# A couple notes:
 # 1. The house icon was added outside of R. Don't worry about adding it.
-# 2. Don't worry about adding the county labels. Just add the labels that show the median household income.
-# 3. The colors you can use to get close to the viz are "darkgreen" and "gray"
+# 2. The colors you can use to get close to the viz are "darkgreen" and "gray"
 
 # This is part of Oregon by the Numbers
 # See https://www.tfff.org/oregon-numbers/

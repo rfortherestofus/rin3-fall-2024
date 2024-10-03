@@ -23,10 +23,10 @@ ggplot(
     y = body_mass_g
   )
 ) +
-  geom_point() +
-  scale_x_continuous(
-    limits = c(170, 220)
-  )
+  geom_point() 
+  # scale_x_continuous(
+  #   limits = c(170, 220)
+  # )
 
 penguins |>
   drop_na(flipper_length_mm, body_mass_g) |>
@@ -36,8 +36,6 @@ penguins |>
     color = island
   )) +
   geom_point()
-
-
 
 # Bar Chart Width ---------------------------------------------------------
 
