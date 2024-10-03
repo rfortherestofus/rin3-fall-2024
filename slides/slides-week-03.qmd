@@ -50,9 +50,11 @@ Please put your answer in the chat!
 https://rin3fall2024.rfortherestofus.com/slides/slides-week-03.html
 :::
 
-# Housekeeping
+# Housekeeping {.inverse}
 
-# Data Viz Tips
+# Data Viz Tips {.inverse}
+
+## Data Viz Tips
 
 1. Is there a "correct" order to put geoms, scales, themes, etc?
 
