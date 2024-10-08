@@ -47,17 +47,14 @@ Put your answer in the chat!
 1. Next week
 
 ::: {.notes}
-.rin3slidehttps://rin3fall2024.rfortherestofus.com/slides/slides-week-04.html
+https://rin3fall2024.rfortherestofus.com/slides/slides-week-04.html
 :::
 
 # Housekeeping
 
-1. Anything better or worse on the website/videos?
-
-1. Reminder that next week is a catch-up week
+1. Next week is a catch-up week: no live session or co-working session
 
 # Questions on Data Wrangling or Data Viz? {.inverse}
-
 
 # Quarto {.inverse}
 
@@ -69,12 +66,11 @@ Talk about parameterized reporting making it worth it
 
 ## Quarto Exercise
 
-1. Copy the code from [this Quarto document](https://raw.githubusercontent.com/rfortherestofus/rin3-spring-2024/main/misc/no-render.qmd). Figure out why it won't render and change it so that it will!
+1. Copy the code from [this Quarto document](https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2024/main/misc/no-render.qmd). Figure out why it won't render and change it so that it will!
 
-1. Copy the code from [this second Quarto document](https://raw.githubusercontent.com/rfortherestofus/rin3-spring-2024/main/misc/guess-what.qmd). There are a series of questions in it. Tackle them one by one, making changes to the document as you do so.
+1. Copy the code from [this second Quarto document](https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2024/main/misc/guess-what.qmd). There are a series of questions in it. Tackle them one by one, making changes to the document as you do so.
 
 # Quarto Tips {.inverse}
-
 
 ## Markdown Text Shows Up in Many Places!
 
@@ -97,6 +93,10 @@ Talk about parameterized reporting making it worth it
 - List item
 
     - Indented list item
+    
+::: {.notes}
+4 spaces
+:::
 
 
 ## How to structure your Quarto documents
@@ -104,6 +104,8 @@ Talk about parameterized reporting making it worth it
 1. Load packages at top
 
 1. Import data at top
+
+1. Custom functions at top
 
 1. Code chunks used throughout to make outputs (graphs, tables, maps, etc)
 
@@ -220,10 +222,10 @@ Column 2
 
 . . .
 
-- [I've added a lesson from previous coach Charlie on reading documentation pages](https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/reading-documentation-pages)
+- [We've added a lesson from previous coach Charlie on reading documentation pages](https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/understanding-documentation-pages)
 
 ::: {.notes}
-https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/reading-documentation-pages
+https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/understanding-documentation-pages
 :::
 
 ## Any Other Quarto Questions? {.inverse}
@@ -232,4 +234,4 @@ https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/reading-do
 
 - Catch-up week! No live session or co-working sessions are happening, but please reach out to your coach for any help you may need!
 
-- For following week, you will be learning to use Git and GitHub. Lessons are up now so you can start whenever you would like to!
+- For following week, you will be learning about advanced data wrangling, focusing on the concept of tidy data. Lessons are up now so you can start whenever you would like to!

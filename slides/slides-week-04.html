@@ -8,7 +8,7 @@
 <link href="slides-week-04_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="slides-week-04_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="slides-week-04_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.25">
+  <meta name="generator" content="quarto-1.5.54">
 
   <title>R in 3 Months Week 4 (Quarto)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -411,7 +411,7 @@
 <li class="fragment"><p>Next week</p></li>
 </ol>
 <aside class="notes">
-<p>.rin3slidehttps://rin3fall2024.rfortherestofus.com/slides/slides-week-04.html</p>
+<p>https://rin3fall2024.rfortherestofus.com/slides/slides-week-04.html</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -428,8 +428,7 @@
 <section id="housekeeping" class="title-slide slide level1 center">
 <h1>Housekeeping</h1>
 <ol type="1">
-<li class="fragment"><p>Anything better or worse on the website/videos?</p></li>
-<li class="fragment"><p>Reminder that next week is a catch-up week</p></li>
+<li class="fragment">Next week is a catch-up week: no live session or co-working session</li>
 </ol>
 </section>
 
@@ -463,8 +462,8 @@
 <section id="quarto-exercise-1" class="slide level2 center">
 <h2>Quarto Exercise</h2>
 <ol type="1">
-<li class="fragment"><p>Copy the code from <a href="https://raw.githubusercontent.com/rfortherestofus/rin3-spring-2024/main/misc/no-render.qmd">this Quarto document</a>. Figure out why it won’t render and change it so that it will!</p></li>
-<li class="fragment"><p>Copy the code from <a href="https://raw.githubusercontent.com/rfortherestofus/rin3-spring-2024/main/misc/guess-what.qmd">this second Quarto document</a>. There are a series of questions in it. Tackle them one by one, making changes to the document as you do so.</p></li>
+<li class="fragment"><p>Copy the code from <a href="https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2024/main/misc/no-render.qmd">this Quarto document</a>. Figure out why it won’t render and change it so that it will!</p></li>
+<li class="fragment"><p>Copy the code from <a href="https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2024/main/misc/guess-what.qmd">this second Quarto document</a>. There are a series of questions in it. Tackle them one by one, making changes to the document as you do so.</p></li>
 </ol>
 </section></section>
 <section>
@@ -498,6 +497,19 @@
 <li class="fragment">Indented list item</li>
 </ul></li>
 </ul>
+<aside class="notes">
+<p>4 spaces</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
 <section id="how-to-structure-your-quarto-documents" class="slide level2 center">
@@ -505,6 +517,7 @@
 <ol type="1">
 <li class="fragment"><p>Load packages at top</p></li>
 <li class="fragment"><p>Import data at top</p></li>
+<li class="fragment"><p>Custom functions at top</p></li>
 <li class="fragment"><p>Code chunks used throughout to make outputs (graphs, tables, maps, etc)</p></li>
 <li class="fragment"><p>I also do data cleaning/tidying in a separate R script file (you’ll learn about this soon)</p></li>
 </ol>
@@ -590,8 +603,7 @@
 <p>Column 1</p>
 </div><div class="column" style="width:50%;">
 <p>Column 2</p>
-</div>
-</div>
+</div></div>
 <aside class="notes">
 <p>https://quarto.org/docs/presentations/powerpoint.html#multiple-columns</p>
 <style type="text/css">
@@ -645,10 +657,10 @@
 </blockquote>
 <div class="fragment">
 <ul>
-<li class="fragment"><a href="https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/reading-documentation-pages">I’ve added a lesson from previous coach Charlie on reading documentation pages</a></li>
+<li class="fragment"><a href="https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/understanding-documentation-pages">We’ve added a lesson from previous coach Charlie on reading documentation pages</a></li>
 </ul>
 <aside class="notes">
-<p>https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/reading-documentation-pages</p>
+<p>https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/understanding-documentation-pages</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -669,7 +681,7 @@
 <h1>Next Week</h1>
 <ul>
 <li class="fragment"><p>Catch-up week! No live session or co-working sessions are happening, but please reach out to your coach for any help you may need!</p></li>
-<li class="fragment"><p>For following week, you will be learning to use Git and GitHub. Lessons are up now so you can start whenever you would like to!</p></li>
+<li class="fragment"><p>For following week, you will be learning about advanced data wrangling, focusing on the concept of tidy data. Lessons are up now so you can start whenever you would like to!</p></li>
 </ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
