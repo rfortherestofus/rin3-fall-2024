@@ -119,7 +119,7 @@ Show week 1 slides
 
 . . .
 
-> All the content about Quarto has been extremely helpful -- and it's also made me realize that I have been using R Markdown differently than intended.
+> So, is the purpose of Quarto primarily for data viz? It isn't something that for example you'd use for summary stats unless have some visual component with it?
 
 . . .
 
