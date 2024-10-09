@@ -44,6 +44,8 @@ Put your answer in the chat!
 
 1. General Tip
 
+1. Weekly coach tip
+
 1. Next week
 
 ::: {.notes}
@@ -229,6 +231,10 @@ https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/understandin
 :::
 
 ## Any Other Quarto Questions? {.inverse}
+
+# Weekly coach tips
+
+The [{naniar}](https://naniar.njtierney.com/) package!
 
 # Next Week
 
