@@ -58,6 +58,10 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-04.html
 
 # Questions on Data Wrangling or Data Viz? {.inverse}
 
+## Questions on Data Wrangling or Data Viz?
+
+1. How to change variable names
+
 # Quarto {.inverse}
 
 ::: {.notes}
@@ -113,10 +117,6 @@ Talk about parameterized reporting making it worth it
 
 1. I also do data cleaning/tidying in a separate R script file (you'll learn about this soon)
 
-::: {.notes}
-Show week 1 slides
-:::
-
 ## How I use Quarto documents is not how you have to use Quarto documents!
 
 . . .
@@ -126,10 +126,6 @@ Show week 1 slides
 . . .
 
 Many people do data cleaning and exploratory data analysis in Quarto documents!
-
-::: {.notes}
-Give example of financial document I'm going to make
-:::
 
 ## How to change the size of plots in Quarto documents
 
@@ -225,6 +221,8 @@ Column 2
 . . .
 
 - [We've added a lesson from previous coach Charlie on reading documentation pages](https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/understanding-documentation-pages)
+
+- Also [check out the appendix in Kieran Healy's book](https://socviz.co/appendix.html#a-little-more-about-r)
 
 ::: {.notes}
 https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/understanding-documentation-pages
