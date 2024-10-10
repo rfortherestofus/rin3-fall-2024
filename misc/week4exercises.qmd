@@ -1,0 +1,37 @@
+---
+title: Guess What You'll See
+format: html
+execute: 
+  echo: false
+  warning: false
+  message: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+penguins <- read_csv("https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2023/main/data-raw/penguins.csv")
+```
+
+- List item 1
+
+    - Sub-item 1
+
+I'm having **trouble** getting the plot to show below. What do I need to change to make it show up?
+
+```{r}
+#| echo: true
+penguins |> 
+  count(island) |> 
+  ggplot(aes(x = island, 
+             y = n)) +
+  geom_col()
+```
+
+Can you also make a change to hide the code throughout the rendered report?
+
+What if you want to hide the code in the first two code chunks, but keep it in the last one? How could you do that?
