@@ -35,6 +35,8 @@ library(scales)
 
 1. Housekeeping
 
+1. Quarto Question
+
 1. Tidy Data
 
 1. A Couple Little Tips
@@ -64,6 +66,10 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-07.html
 - Week 12: Advanced Quarto
 
 - Week 13: Wrap Up
+
+# Quarto Question
+
+> I work in HR and we generate a lot of individual varitions of generic letters (recognition of x years of service, formal notification of pay increases including the employee's current pay + their % increase and resulting new salary). I could probably set something up to generate those sorts of letters in Quarto, right? 
 
 # Tidy Data {.inverse}
 
