@@ -1,54 +1,25 @@
-# Load Packages -----------------------------------------------------------
-
 library(tidyverse)
+library(readxl)
 
-# Import Data -------------------------------------------------------------
+# Tidy Data Rule #1: Every Column is a Variable
 
-penguins <- read_csv("data-raw/penguins.csv")
+billboard
 
-# Facetting Scales --------------------------------------------------------
+# Tidy Data Rule #2: Every Row is an Observation
 
+survey_data <-
+  read_csv("data-raw/survey_data.csv")
 
-# This is a section label -------------------------------------------------
+survey_data |> 
+  select(respondent_id, favorite_parts)
 
-# lkajdflkaf -----
+# Tidy Data Rule #3: Every Cell is a Single Value
 
+addresses <-
+  read_csv("data-raw/addresses.csv")
 
+# Survey Monkey data
 
-penguins |>
-  drop_na(flipper_length_mm, body_mass_g) |>
-  ggplot(mapping = aes(
-    x = flipper_length_mm,
-    y = body_mass_g
-  )) +
-  geom_point() +
-  scale_y_continuous(limits = c(0, 7000)) +
-  facet_wrap(vars(island),
-             scales = "free")
-
-ggsave(filename = "outputs/penguins-plot.png",
-       width = 5,
-       height = 3)
+read_xlsx("data-raw/survey-monkey-data.xlsx")
 
 
-# Previewing at Exact Dimensions ------------------------------------------
-
-library(camcorder)
-
-gg_record(
-  dir = "outputs",
-  device = "png",
-  width = 10,
-  height = 6,
-  units = "in",
-  dpi = 300
-)
-
-penguins |>
-  drop_na(flipper_length_mm, body_mass_g) |>
-  ggplot(mapping = aes(
-    x = flipper_length_mm,
-    y = body_mass_g
-  )) +
-  geom_point() +
-  facet_wrap(vars(island))

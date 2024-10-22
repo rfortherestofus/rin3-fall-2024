@@ -1,5 +1,5 @@
 ---
-title: R in 3 Months Week 6 (Git and GitHub)!!!!!!
+title: R in 3 Months Week 7 (Tidy Data)
 format:
   rfortherestofus-slides-revealjs:
     menu: false
@@ -35,27 +35,23 @@ library(scales)
 
 1. Housekeeping
 
-1. Data Viz Tips
+1. Tidy Data
 
-1. Git + GitHub
+1. A Couple Little Tips
 
-1. Next week
+1. Next Week
 
 ::: {.notes}
-https://rin3fall2023.rfortherestofus.com/slides-week-06.html
+https://rin3fall2024.rfortherestofus.com/slides/slides-week-07.html
 :::
 
 # Housekeeping {.inverse}
 
-## Check-In Survey
-
-[Please fill out this very short check-in survey](https://forms.gle/rCBCkysZLa6LiESw6)
-
 ## What Does the Rest of R in 3 Months Look Like?
 
-- Week 7: Advanced Data Wrangling, Part 1 (Tidy Data)
+- Week 7: Advanced Data Wrangling, Part 2 (More Functions for Wrangling Data and Functions)
 
-- Week 8: Advanced Data Wrangling, Part 2 (Functions and Data Merging)
+- Week 8: Advanced Data Wrangling, Part 3 (Data Merging and Exporting Data)
 
 - Week 9: Advanced Data Viz, Part 1 (Highlighting and Decluttering)
 
@@ -69,82 +65,55 @@ https://rin3fall2023.rfortherestofus.com/slides-week-06.html
 
 - Week 13: Wrap Up
 
-## Final project
+# Tidy Data {.inverse}
 
-- Record a 5-minute video showing what you have learned how to do in R over the three months
-
-## You can get feedback through end of June
-
-## You have access to materials FOREVER! {.inverse}
-
-# RStudio Projects {.inverse}
-
-# Data Viz Tips
-
-- Facetting scales
-
-- Previewing plots at exact dimensions
-
-# Git + GitHub {.inverse}
-
-## Using Git + GitHub with RStudio
-
-- You have access to [Using Git and GitHub with R](https://rfortherestofus.com/courses/git-github), which shows how to use RStudio to connect with GitHub
-
-- How to import projects from GitHub to RStudio using GitHub Desktop and RStudio
-
-## Why Learn Git + GitHub?
-
->  I understand the basics of how github functions but I would really appreciate some clarity about a real-world practical application of how someone would use github in their work. To me, it seems like github adds a lot of extra steps to do something that can more easily be accomplished by writing detailed notes to myself in my syntax, or using the # character to zero out syntax that I previously developed but no longer want to use. Thanks for your insights!
-
-## Using GitHub Lets us Avoid `Final-Final-Final-v3.docx`
-
-
-
-## Using GitHub Lets us Retrace Our Steps
-
-![](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/78587c8b-fa99-4c94-bce2-026cf4e588b5.png?h=dbb1a78f096f524380f5f3eb70fa6d7b)
+# What Questions Do You Have About Tidy Data? {.inverse}
 
 ::: {.notes}
-- https://allisonhorst.com/git-github
-- Show discarding changes in GH Desktop
+https://rfortherestofus.com/2022/01/tidy-data-chat
+
+https://r4ds.hadley.nz/data-tidy
+
+Think about unit of analysis
+
+Try to plot your data and if you can't, it's probably not tidy
 :::
 
-## Using GitHub for Project Management: Issues
+## Tidy Data Rule #1: Every Column is a Variable {.inverse}
+
+## Tidy Data Rule #2: Every Row is an Observation {.inverse}
+
+## Tidy Data Rule #3: Every Cell is a Single Value {.inverse}
+
+## Tidy Data Question
+
+> When working with "select all that apply" variables in the past in datasets where one row = one individual, I've typically dealt with this by converting each response option to its own column where a 1 ("yes") is present if that response option was selected. This has worked well for my purposes, but I understand now that it violates Tidy Data Rule 1 because a single variable is spread across multiple columns. Am I understanding correctly that while the approach I've used in the paste is not inherently better or worse than tidy format, the advantage to making it tidy is that it will be easier to analyze using tidyverse? Is this still true if the unit of analysis I'm interested in is the individual and not the activity (for example)?
 
 ::: {.notes}
-- https://github.com/rfortherestofus/cwp-dashboard
-- https://github.com/rfortherestofus/api-food-asset-map
+https://rfortherestofus.com/2022/05/select-all
 :::
 
-## Publishing your Work with Netlify
+## Tidy Data Exercise
 
-::: {.notes}
-Show slides + book
-:::
+[Copy this Google Slides presentation](https://docs.google.com/presentation/d/1gUlQyipflPaX_zydKin9lHyVOmyyRnWy0aegh2kaPCQ/copy)
 
-## More Complicated Use of GitHub for Project Management: Branches and Pull Requests
+# A Couple Little Tips {.inverse}
 
-::: {.notes}
-- https://github.com/rfortherestofus/rfortherestofus.com/issues
-- https://github.com/rfortherestofus/rfortherestofus.com/issues/309
-- https://github.com/rfortherestofus/book/tree/figure_cap
-- https://twitter.com/apreshill/status/1363104026460577793
-:::
+## Code Formatting
 
+Why do I put the assignment operator on the first line and code below it?
 
-## More Complicated Uses of Git + GitHub: GitHub Actions
+## `styler` Package
 
-::: {.notes}
-- https://rfortherestofus.com/2023/05/github-actions
-- https://www.youtube.com/watch?v=arzBRW5XIkg&ab_channel=MelissaVanBussel(ggnot2)
-:::
-
+![](https://styler.r-lib.org/reference/figures/logo.png)
 
 # Next Week
 
-- Advanced data wrangling and analysis
+1. Lessons on additional data wrangling functions and learn to make your own functions
 
-- Tidy data
+1. No project assignment (but there will be one in week 8)
 
-- No project assignment (but start thinking about how your data is or is not tidy)
+
+
+
+
