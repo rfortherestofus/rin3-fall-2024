@@ -1,5 +1,5 @@
 ---
-title: R in 3 Months Week 7 (Tidy Data)
+title: R in 3 Months Week 6 (Tidy Data)
 format:
   rfortherestofus-slides-revealjs:
     menu: false
@@ -33,17 +33,17 @@ library(scales)
 
 # Agenda
 
-1. Housekeeping
+1.  Housekeeping
 
-1. Quarto Question
+2.  Quarto Question
 
-1. Tidy Data
+3.  Tidy Data
 
-1. A Couple Little Tips
+4.  A Couple Little Tips
 
-1. Next Week
+5.  Next Week
 
-::: {.notes}
+::: notes
 https://rin3fall2024.rfortherestofus.com/slides/slides-week-07.html
 :::
 
@@ -51,31 +51,31 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-07.html
 
 ## What Does the Rest of R in 3 Months Look Like?
 
-- Week 7: Advanced Data Wrangling, Part 2 (More Functions for Wrangling Data and Functions)
+-   Week 7: Advanced Data Wrangling, Part 2 (More Functions for Wrangling Data and Functions)
 
-- Week 8: Advanced Data Wrangling, Part 3 (Data Merging and Exporting Data)
+-   Week 8: Advanced Data Wrangling, Part 3 (Data Merging and Exporting Data)
 
-- Week 9: Advanced Data Viz, Part 1 (Highlighting and Decluttering)
+-   Week 9: Advanced Data Viz, Part 1 (Highlighting and Decluttering)
 
-- Week 10: Advanced Data Viz, Part 2 (Explaining and Making Your Viz Sparkle)
+-   Week 10: Advanced Data Viz, Part 2 (Explaining and Making Your Viz Sparkle)
 
 ## What Does the Rest of R in 3 Months Look Like?
 
-- Week 11: Catch-Up Week
+-   Week 11: Catch-Up Week
 
-- Week 12: Advanced Quarto
+-   Week 12: Advanced Quarto
 
-- Week 13: Wrap Up
+-   Week 13: Wrap Up
 
 # Quarto Question
 
-> I work in HR and we generate a lot of individual varitions of generic letters (recognition of x years of service, formal notification of pay increases including the employee's current pay + their % increase and resulting new salary). I could probably set something up to generate those sorts of letters in Quarto, right? 
+> I work in HR and we generate a lot of individual variations of generic letters (recognition of x years of service, formal notification of pay increases including the employee's current pay + their % increase and resulting new salary). I could probably set something up to generate those sorts of letters in Quarto, right?
 
 # Tidy Data {.inverse}
 
 # What Questions Do You Have About Tidy Data? {.inverse}
 
-::: {.notes}
+::: notes
 https://rfortherestofus.com/2022/01/tidy-data-chat
 
 https://r4ds.hadley.nz/data-tidy
@@ -95,7 +95,7 @@ Try to plot your data and if you can't, it's probably not tidy
 
 > When working with "select all that apply" variables in the past in datasets where one row = one individual, I've typically dealt with this by converting each response option to its own column where a 1 ("yes") is present if that response option was selected. This has worked well for my purposes, but I understand now that it violates Tidy Data Rule 1 because a single variable is spread across multiple columns. Am I understanding correctly that while the approach I've used in the paste is not inherently better or worse than tidy format, the advantage to making it tidy is that it will be easier to analyze using tidyverse? Is this still true if the unit of analysis I'm interested in is the individual and not the activity (for example)?
 
-::: {.notes}
+::: notes
 https://rfortherestofus.com/2022/05/select-all
 :::
 
@@ -113,13 +113,14 @@ Why do I put the assignment operator on the first line and code below it?
 
 ![](https://styler.r-lib.org/reference/figures/logo.png)
 
+## Coach tip of the week
+
+Podcast series "[Data Vampires](https://techwontsave.us/episode/241_data_vampires_going_hyperscale_episode_1)", by Tech Won't Save Us.
+
+![](assets/data_vampires.jpg)
+
 # Next Week
 
-1. Lessons on additional data wrangling functions and learn to make your own functions
+1.  Lessons on additional data wrangling functions and learn to make your own functions
 
-1. No project assignment (but there will be one in week 8)
-
-
-
-
-
+2.  No project assignment (but there will be one in week 8)
