@@ -79,13 +79,9 @@ get_acs_race_ethnicity <- function(clean_variable_names = FALSE) {
 race_ethnicity_3 <-
   get_acs_race_ethnicity(clean_variable_names = TRUE)
 
-
 # Read Multiple Excel Files -----------------------------------------------
 
 data_year <- 2023
-
-
-
 
 import_median_income_data <- function(data_year) {
 

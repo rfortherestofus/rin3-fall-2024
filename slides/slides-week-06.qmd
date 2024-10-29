@@ -67,6 +67,10 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-07.html
 
 -   Week 13: Wrap Up
 
+## Acces to Materials
+
+- You have access to course materials and coach feedback FOREVER
+
 # Quarto Question
 
 > I work in HR and we generate a lot of individual variations of generic letters (recognition of x years of service, formal notification of pay increases including the employee's current pay + their % increase and resulting new salary). I could probably set something up to generate those sorts of letters in Quarto, right?

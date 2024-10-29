@@ -1,0 +1,49 @@
+---
+title: "HR Letter"
+format: html
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(scales)
+
+# hr_data <-
+#   read_csv("hr_data.csv")
+
+
+hr_data <-
+  tibble(
+    employee_id = c("E001", "E002", "E003", "E004"),
+    first_name = c("Jane", "Michael", "Sarah", "David"),
+    last_name = c("Smith", "Johnson", "Williams", "Brown"),
+    years_service = c(5, 10, 15, 20),
+    current_salary = c(55000, 72000, 88000, 95000),
+    increase_percent = c(3.5, 4.0, 4.5, 5.0),
+    letter_type = c("service_recognition", "pay_increase", "service_recognition", "pay_increase")
+  ) |>
+  mutate(
+    new_salary = current_salary * (1 + increase_percent / 100),
+    salary_increase = new_salary - current_salary,
+    formal_name = str_glue("{first_name} {last_name}")
+  )
+
+hr_data_filtered <- 
+  hr_data |> 
+  filter(formal_name == "Michael Johnson")
+```
+
+<!-- I work in HR and we generate a lot of individual variations of generic letters (recognition of x years of service, formal notification of pay increases including the employee’s current pay + their % increase and resulting new salary). I could probably set something up to generate those sorts of letters in Quarto, right? -->
+
+Dear `r hr_data_filtered$formal_name`,
+
+Your current salary is `r dollar(hr_data_filtered$current_salary)`. You are set to receive a `r hr_data_filtered$increase_percent` percent increase in your salary. Your new salary will be `r dollar(hr_data_filtered$new_salary)`.
+
+If you have any questions, please let us know.
+
+Best wishes,
+
+HR 

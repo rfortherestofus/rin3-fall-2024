@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="slides-week-06_files/libs/clipboard/clipboard.min.js"></script>
-<script src="slides-week-06_files/libs/quarto-html/tabby.min.js"></script>
-<script src="slides-week-06_files/libs/quarto-html/popper.min.js"></script>
-<script src="slides-week-06_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="slides-week-06_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="slides-week-06_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides-week-06_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="slides-week-06_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="slides-week-07_files/libs/clipboard/clipboard.min.js"></script>
+<script src="slides-week-07_files/libs/quarto-html/tabby.min.js"></script>
+<script src="slides-week-07_files/libs/quarto-html/popper.min.js"></script>
+<script src="slides-week-07_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="slides-week-07_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="slides-week-07_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="slides-week-07_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="slides-week-07_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.54">
 
-  <title>R in 3 Months Week 6 (Tidy Data)</title>
+  <title>R in 3 Months Week 7 (Tidy Data, Part 2 and Functions)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="slides-week-06_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="slides-week-06_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="slides-week-07_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="slides-week-07_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,11 +29,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="slides-week-06_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="slides-week-06_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="slides-week-06_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="slides-week-06_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="slides-week-06_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="slides-week-07_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="slides-week-07_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="slides-week-07_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="slides-week-07_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="slides-week-07_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -325,7 +325,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="assets/rru-hex-bg-gradient-dark.svg" data-background-size="cover" class="quarto-title-block center">
-  <h1 class="title">R in 3 Months Week 6 (Tidy Data)</h1>
+  <h1 class="title">R in 3 Months Week 7 (Tidy Data, Part 2 and Functions)</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -335,13 +335,13 @@
 <h1>Agenda</h1>
 <ol type="1">
 <li class="fragment"><p>Housekeeping</p></li>
-<li class="fragment"><p>Quarto Question</p></li>
-<li class="fragment"><p>Tidy Data</p></li>
-<li class="fragment"><p>A Couple Little Tips</p></li>
+<li class="fragment"><p>Question on Function Arguments</p></li>
+<li class="fragment"><p>Tidy Example Project</p></li>
+<li class="fragment"><p>A Few of Our Favorite Functions</p></li>
 <li class="fragment"><p>Next Week</p></li>
 </ol>
 <aside class="notes">
-<p>https://rin3fall2024.rfortherestofus.com/slides/slides-week-07.html</p>
+<p>https://rin3fall2024.rfortherestofus.com/slides/slides-week-08.html</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -355,54 +355,43 @@
       }</style></aside>
 </section>
 
-<section>
 <section id="housekeeping" class="title-slide slide level1 inverse center">
 <h1>Housekeeping</h1>
 
 </section>
-<section id="what-does-the-rest-of-r-in-3-months-look-like" class="slide level2 center">
-<h2>What Does the Rest of R in 3 Months Look Like?</h2>
-<ul>
-<li class="fragment"><p>Week 7: Advanced Data Wrangling, Part 2 (More Functions for Wrangling Data and Functions)</p></li>
-<li class="fragment"><p>Week 8: Advanced Data Wrangling, Part 3 (Data Merging and Exporting Data)</p></li>
-<li class="fragment"><p>Week 9: Advanced Data Viz, Part 1 (Highlighting and Decluttering)</p></li>
-<li class="fragment"><p>Week 10: Advanced Data Viz, Part 2 (Explaining and Making Your Viz Sparkle)</p></li>
-</ul>
-</section>
-<section id="what-does-the-rest-of-r-in-3-months-look-like-1" class="slide level2 center">
-<h2>What Does the Rest of R in 3 Months Look Like?</h2>
-<ul>
-<li class="fragment"><p>Week 11: Catch-Up Week</p></li>
-<li class="fragment"><p>Week 12: Advanced Quarto</p></li>
-<li class="fragment"><p>Week 13: Wrap Up</p></li>
-</ul>
-</section>
-<section id="acces-to-materials" class="slide level2 center">
-<h2>Acces to Materials</h2>
-<ul>
-<li class="fragment">You have access to course materials and coach feedback FOREVER</li>
-</ul>
-</section></section>
-<section id="quarto-question" class="title-slide slide level1 center">
-<h1>Quarto Question</h1>
-<blockquote>
-<p>I work in HR and we generate a lot of individual variations of generic letters (recognition of x years of service, formal notification of pay increases including the employee’s current pay + their % increase and resulting new salary). I could probably set something up to generate those sorts of letters in Quarto, right?</p>
-</blockquote>
-</section>
 
-<section id="tidy-data" class="title-slide slide level1 inverse center">
-<h1>Tidy Data</h1>
-
-</section>
-
-<section>
-<section id="what-questions-do-you-have-about-tidy-data" class="title-slide slide level1 inverse center">
-<h1>What Questions Do You Have About Tidy Data?</h1>
+<section id="your-questions" class="title-slide slide level1 center">
+<h1>Your Questions</h1>
+<div class="fragment">
+<p>I’m seeing a difference in the syntax used in the main video vs the solution video and am wondering if you can please explain the difference. In the main video, you use <code>separate_longer_delim(cols = activities,...</code> but the solution video uses <code>separate_longer_delim(partyid,...</code> without the use of <code>cols =</code>.</p>
 <aside class="notes">
-<p>https://rfortherestofus.com/2022/01/tidy-data-chat</p>
-<p>https://r4ds.hadley.nz/data-tidy</p>
-<p>Think about unit of analysis</p>
-<p>Try to plot your data and if you can’t, it’s probably not tidy</p>
+<p>https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/tidy-data-rule-2-every-row-is-an-observation</p>
+<p>https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/using-function-arguments</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+
+<section id="tidy-example-project" class="title-slide slide level1 center">
+<h1>Tidy Example Project</h1>
+<aside class="notes">
+<ul>
+<li>make demographics data frame</li>
+<li>make function to import data</li>
+<li>show importing multiple years of data</li>
+<li>make function to work with slightly different data (2021): show doing extra steps after function and within it (show rename() not working, but use set_names() instead)</li>
+<li>in report, show merging demographics data frame in</li>
+<li>make function to create data viz for any year</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -415,22 +404,15 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="tidy-data-rule-1-every-column-is-a-variable" class="slide level2 inverse center">
-<h2>Tidy Data Rule #1: Every Column is a Variable</h2>
-</section>
-<section id="tidy-data-rule-2-every-row-is-an-observation" class="slide level2 inverse center">
-<h2>Tidy Data Rule #2: Every Row is an Observation</h2>
-</section>
-<section id="tidy-data-rule-3-every-cell-is-a-single-value" class="slide level2 inverse center">
-<h2>Tidy Data Rule #3: Every Cell is a Single Value</h2>
-</section>
-<section id="tidy-data-question" class="slide level2 center">
-<h2>Tidy Data Question</h2>
-<blockquote>
-<p>When working with “select all that apply” variables in the past in datasets where one row = one individual, I’ve typically dealt with this by converting each response option to its own column where a 1 (“yes”) is present if that response option was selected. This has worked well for my purposes, but I understand now that it violates Tidy Data Rule 1 because a single variable is spread across multiple columns. Am I understanding correctly that while the approach I’ve used in the paste is not inherently better or worse than tidy format, the advantage to making it tidy is that it will be easier to analyze using tidyverse? Is this still true if the unit of analysis I’m interested in is the individual and not the activity (for example)?</p>
-</blockquote>
+
+<section id="a-few-of-our-favorite-functions" class="title-slide slide level1 center">
+<h1>A Few of Our Favorite Functions</h1>
+<ul>
+<li class="fragment"><p>You’ve created a function in the context of data cleaning, but functions can be for anything</p></li>
+<li class="fragment"><p>You’ll learn later how to make a custom ggplot theme that is a function</p></li>
+</ul>
 <aside class="notes">
-<p>https://rfortherestofus.com/2022/05/select-all</p>
+<p>https://book.rfortherestofus.com/packages.html</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -443,34 +425,13 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="tidy-data-exercise" class="slide level2 center">
-<h2>Tidy Data Exercise</h2>
-<p><a href="https://docs.google.com/presentation/d/1gUlQyipflPaX_zydKin9lHyVOmyyRnWy0aegh2kaPCQ/copy">Copy this Google Slides presentation</a></p>
-</section></section>
-<section>
-<section id="a-couple-little-tips" class="title-slide slide level1 inverse center">
-<h1>A Couple Little Tips</h1>
 
-</section>
-<section id="code-formatting" class="slide level2 center">
-<h2>Code Formatting</h2>
-<p>Why do I put the assignment operator on the first line and code below it?</p>
-</section>
-<section id="styler-package" class="slide level2 center">
-<h2><code>styler</code> Package</h2>
-
-<img data-src="https://styler.r-lib.org/reference/figures/logo.png" class="r-stretch"></section>
-<section id="coach-tip-of-the-week" class="slide level2 center">
-<h2>Coach tip of the week</h2>
-<p>Podcast series “<a href="https://techwontsave.us/episode/241_data_vampires_going_hyperscale_episode_1">Data Vampires</a>”, by Tech Won’t Save Us.</p>
-
-<img data-src="assets/data_vampires.jpg" class="r-stretch"></section></section>
 <section id="next-week" class="title-slide slide level1 center">
 <h1>Next Week</h1>
-<ol type="1">
-<li class="fragment"><p>Lessons on additional data wrangling functions and learn to make your own functions</p></li>
-<li class="fragment"><p>No project assignment (but there will be one in week 8)</p></li>
-</ol>
+<ul>
+<li class="fragment"><p>Course lessons cover data merging</p></li>
+<li class="fragment"><p>Project assignment is to tidy your data with the various functions you have learned</p></li>
+</ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -481,19 +442,19 @@
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="slides-week-06_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="slides-week-07_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="slides-week-06_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="slides-week-06_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="slides-week-06_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="slides-week-06_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="slides-week-06_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="slides-week-07_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="slides-week-07_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="slides-week-07_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="slides-week-07_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="slides-week-07_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="slides-week-06_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="slides-week-06_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="slides-week-06_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="slides-week-06_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="slides-week-07_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="slides-week-07_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="slides-week-07_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="slides-week-07_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -687,44 +648,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

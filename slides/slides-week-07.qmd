@@ -1,5 +1,5 @@
 ---
-title: R in 3 Months Week 8 (Merging Data and Functions)
+title: R in 3 Months Week 7 (Tidy Data, Part 2 and Functions)
 format:
   rfortherestofus-slides-revealjs:
     menu: false
@@ -49,9 +49,9 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-08.html
 I'm seeing a difference in the syntax used in the main video vs the solution video and am wondering if you can please explain the difference. In the main video, you use `separate_longer_delim(cols = activities,...` but the solution video uses `separate_longer_delim(partyid,...` without the use of `cols =`.
 
 ::: {.notes}
-https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/tidy-data-rule-2-every-row-is-an-observation
+https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/tidy-data-rule-2-every-row-is-an-observation
 
-https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/using-function-arguments
+https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/using-function-arguments
 :::
 
 
@@ -78,6 +78,6 @@ https://book.rfortherestofus.com/packages.html
 
 # Next Week
 
-- Advanced data viz lessons
+- Course lessons cover data merging
 
-- No project assignment, but start to think about improving a data viz you've made previously
+- Project assignment is to tidy your data with the various functions you have learned
