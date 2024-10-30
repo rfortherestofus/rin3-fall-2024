@@ -76,6 +76,17 @@ https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/using-functi
 https://book.rfortherestofus.com/packages.html
 :::
 
+# Coach tip
+
+::: {.column width="70%"}
+
+[Data Science in a Box interactive tutorials](https://datasciencebox.org/02-interactive-tutorials)
+:::
+
+::: {.column width="20%"}
+![](https://datasciencebox.org/images/dsbox.png){.aside}
+:::
+
 # Next Week
 
 - Course lessons cover data merging
