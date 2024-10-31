@@ -1,5 +1,5 @@
 ---
-title: R in 3 Months Week 7 (Tidy Data, Part 2 and Functions)
+title: R in 3 Months Week 7 (Tidy Data Part 2 and Functions)
 format:
   rfortherestofus-slides-revealjs:
     menu: false
@@ -30,7 +30,7 @@ editor_options:
 
 1. Tidy Example Project
 
-1. A Few of Our Favorite Functions
+1. Coach Tip
 
 1. Next Week
 
@@ -42,7 +42,7 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-08.html
 
 
 
-# Your Questions
+# Question on Function Arguments
 
 . . .
 
@@ -66,17 +66,17 @@ https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/using-functi
 - make function to create data viz for any year
 :::
 
-# A Few of Our Favorite Functions
+<!-- # A Few of Our Favorite Functions -->
 
-- You've created a function in the context of data cleaning, but functions can be for anything
+<!-- - You've created a function in the context of data cleaning, but functions can be for anything -->
 
-- You'll learn later how to make a custom ggplot theme that is a function
+<!-- - You'll learn later how to make a custom ggplot theme that is a function -->
 
-::: {.notes}
-https://book.rfortherestofus.com/packages.html
-:::
+<!-- ::: {.notes} -->
+<!-- https://book.rfortherestofus.com/packages.html -->
+<!-- ::: -->
 
-# Coach tip
+# Coach Tip
 
 ::: {.column width="70%"}
 
@@ -89,6 +89,6 @@ https://book.rfortherestofus.com/packages.html
 
 # Next Week
 
-- Course lessons cover data merging
+- Course lessons cover data merging and data exporting
 
 - Project assignment is to tidy your data with the various functions you have learned
