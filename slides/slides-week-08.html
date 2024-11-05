@@ -8,9 +8,9 @@
 <link href="slides-week-08_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="slides-week-08_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="slides-week-08_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.553">
+  <meta name="generator" content="quarto-1.5.54">
 
-  <title>R in 3 Months Week 8 (Merging Data and Functions)</title>
+  <title>R in 3 Months Week 8 (Advanced Data Wrangling)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -325,7 +325,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="assets/rru-hex-bg-gradient-dark.svg" data-background-size="cover" class="quarto-title-block center">
-  <h1 class="title">R in 3 Months Week 8 (Merging Data and Functions)</h1>
+  <h1 class="title">R in 3 Months Week 8 (Advanced Data Wrangling)</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -337,7 +337,8 @@
 <li class="fragment"><p>Housekeeping</p></li>
 <li class="fragment"><p>Question on Function Arguments</p></li>
 <li class="fragment"><p>Tidy Example Project</p></li>
-<li class="fragment"><p>A Few of Our Favorite Functions</p></li>
+<li class="fragment"><p>Your Questions on Advanced Data Wrangling</p></li>
+<li class="fragment"><p>Project Assignment</p></li>
 <li class="fragment"><p>Next Week</p></li>
 </ol>
 <aside class="notes">
@@ -358,27 +359,6 @@
 <section id="housekeeping" class="title-slide slide level1 inverse center">
 <h1>Housekeeping</h1>
 
-</section>
-
-<section id="your-questions" class="title-slide slide level1 center">
-<h1>Your Questions</h1>
-<div class="fragment">
-<p>I’m seeing a difference in the syntax used in the main video vs the solution video and am wondering if you can please explain the difference. In the main video, you use <code>separate_longer_delim(cols = activities,...</code> but the solution video uses <code>separate_longer_delim(partyid,...</code> without the use of <code>cols =</code>.</p>
-<aside class="notes">
-<p>https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/tidy-data-rule-2-every-row-is-an-observation</p>
-<p>https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/using-function-arguments</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</div>
 </section>
 
 <section id="tidy-example-project" class="title-slide slide level1 center">
@@ -403,34 +383,39 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<!-- # A Few of Our Favorite Functions -->
+<!-- - You've created a function in the context of data cleaning, but functions can be for anything -->
+<!-- - You'll learn later how to make a custom ggplot theme that is a function -->
+<!-- ::: {.notes} -->
+<!-- https://book.rfortherestofus.com/packages.html -->
+<!-- ::: -->
 </section>
 
-<section id="a-few-of-our-favorite-functions" class="title-slide slide level1 center">
-<h1>A Few of Our Favorite Functions</h1>
+<section>
+<section id="your-questions" class="title-slide slide level1 center">
+<h1>Your Questions</h1>
+
+</section>
+<section id="case_match-vs-case_when" class="slide level2 center">
+<h2><code>case_match()</code> vs <code>case_when()</code></h2>
 <ul>
-<li class="fragment"><p>You’ve created a function in the context of data cleaning, but functions can be for anything</p></li>
-<li class="fragment"><p>You’ll learn later how to make a custom ggplot theme that is a function</p></li>
+<li class="fragment"><p>You can always use <code>case_when()</code> where you use <code>case_match()</code></p></li>
+<li class="fragment"><p>You can only sometimes use <code>case_match()</code> where you use <code>case_when()</code></p></li>
 </ul>
-<aside class="notes">
-<p>https://book.rfortherestofus.com/packages.html</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</section>
+<section id="joins" class="slide level2 center">
+<h2>Joins</h2>
+</section></section>
+<section id="project-assignment" class="title-slide slide level1 center">
+<h1>Project Assignment</h1>
+
 </section>
 
 <section id="next-week" class="title-slide slide level1 center">
 <h1>Next Week</h1>
 <ul>
-<li class="fragment"><p>Advanced data viz lessons</p></li>
-<li class="fragment"><p>No project assignment, but start to think about improving a data viz you’ve made previously</p></li>
+<li class="fragment"><p>Advanced data viz, part 1</p></li>
+<li class="fragment"><p>Project assignment is to tidy your data with the various functions you have learned</p></li>
 </ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -680,18 +665,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -723,7 +697,29 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -731,7 +727,7 @@
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

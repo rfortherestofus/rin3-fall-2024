@@ -1,0 +1,86 @@
+---
+title: R in 3 Months Week 8 (Advanced Data Wrangling)
+format:
+  rfortherestofus-slides-revealjs:
+    menu: false
+    progress: true
+    slide-number: true
+    show-slide-number: print
+    center: true
+    incremental: true
+    auto-animate: true
+execute: 
+  message: false
+  warning: false
+  cache: false
+  # eval: false
+  echo: true
+title-slide-attributes:
+  data-background-image: assets/rru-hex-bg-gradient-dark.svg
+  data-background-size: cover
+editor_options: 
+  chunk_output_type: console
+---
+
+# Agenda
+
+1. Housekeeping
+
+1. Question on Function Arguments
+
+1. Tidy Example Project
+
+1. Your Questions on Advanced Data Wrangling
+
+1. Project Assignment
+
+1. Next Week
+
+::: {.notes}
+https://rin3fall2024.rfortherestofus.com/slides/slides-week-08.html
+:::
+
+# Housekeeping {.inverse}
+
+
+
+# Tidy Example Project
+
+::: {.notes}
+- make demographics data frame
+- make function to import data
+- show importing multiple years of data
+- make function to work with slightly different data (2021): show doing extra steps after function and within it (show rename() not working, but use set_names() instead)
+- in report, show merging demographics data frame in
+- make function to create data viz for any year
+:::
+
+<!-- # A Few of Our Favorite Functions -->
+
+<!-- - You've created a function in the context of data cleaning, but functions can be for anything -->
+
+<!-- - You'll learn later how to make a custom ggplot theme that is a function -->
+
+<!-- ::: {.notes} -->
+<!-- https://book.rfortherestofus.com/packages.html -->
+<!-- ::: -->
+
+# Your Questions
+
+## `case_match()` vs `case_when()`
+
+- You can always use `case_when()` where you use `case_match()`
+
+- You can only sometimes use `case_match()` where you use `case_when()`
+
+## Joins
+
+# Project Assignment
+
+
+
+# Next Week
+
+- Advanced data viz, part 1
+
+- Project assignment is to tidy your data with the various functions you have learned

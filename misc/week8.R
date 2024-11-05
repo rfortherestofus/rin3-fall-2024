@@ -1,139 +1,64 @@
-# Load Packages -----------------------------------------------------------
+# case_match() vs case_when() ---------------------------------------------
 
-library(tidycensus)
+library(tidyverse)
+library(palmerpenguins)
+
+data(penguins)
+
+penguins |>
+  select(species) |>
+  mutate(species_v2 = case_match(
+    species,
+    "Adelie" ~ "Island 1",
+    "Chinstrap" ~ "Island 2",
+    "Gentoo" ~ "Island 3"
+  ))
+
+penguins |>
+  select(species, bill_length_mm) |>
+  mutate(species_and_length = case_when(
+    species == "Adelie" & bill_length_mm > 35 ~ "Big Adelie Penguins",
+    .default = "Other"
+  ))
 
 
-# Without Function --------------------------------------------------------
+# Joins with mismatched variable types ------------------------------------
 
-get_acs(
-  geography = "state",
-  variables = c("B03002_003",
-                "B03002_004",
-                "B03002_005",
-                "B03002_006",
-                "B03002_007",
-                "B03002_008",
-                "B03002_009",
-                "B03002_012")
+fruits <- tibble(
+  id = c(1, 2, 3, 4),
+  value = c("apple", "banana", "cherry", "date")
 )
 
-get_acs(
-  geography = "state",
-  variables = c(
-    "White" = "B03002_003",
-    "Black/African American" = "B03002_004",
-    "American Indian/Alaska Native" = "B03002_005",
-    "Asian" = "B03002_006",
-    "Native Hawaiian/Pacific Islander" = "B03002_007",
-    "Other race" = "B03002_008",
-    "Multi-Race" = "B03002_009",
-    "Hispanic/Latino" = "B03002_012"
+prices <- tibble(
+  id = c("1", "2", "3", "4"),
+  price = c(0.99, 1.50, 2.00, 2.50)
+)
+
+fruits |> 
+  left_join(prices,
+            join_by(id))
+
+
+
+# Many-to-many joins ------------------------------------------------------
+
+orders <-
+  tibble(
+    order_date = c("2024-01-01", "2024-01-01", "2024-01-02"),
+    product = c("apple", "apple", "banana"),
+    quantity = c(5, 3, 2)
   )
-)
 
-# First version -----------------------------------------------------------
+inventory <-
+  tibble(
+    product = c("apple", "apple", "banana"),
+    location = c("Store A", "Store B", "Store A"),
+    stock = c(100, 150, 75)
+  )
 
-get_acs_race_ethnicity <- function() {
-  race_ethnicity_data <-
-    get_acs(
-      geography = "state",
-      variables = c(
-        "White" = "B03002_003",
-        "Black/African American" = "B03002_004",
-        "American Indian/Alaska Native" = "B03002_005",
-        "Asian" = "B03002_006",
-        "Native Hawaiian/Pacific Islander" = "B03002_007",
-        "Other race" = "B03002_008",
-        "Multi-Race" = "B03002_009",
-        "Hispanic/Latino" = "B03002_012"
-      )
-    )
-  
-  race_ethnicity_data
-}
-
-
-# Clean Names -------------------------------------------------------------
-
-
-# Pass Arguments to Another Function --------------------------------------
-
-get_acs_race_ethnicity <- function(
-    clean_variable_names = FALSE,
-    my_geography
-) {
-  race_ethnicity_data <-
-    get_acs(
-      geography = my_geography,
-      variables = c(
-        "White" = "B03002_003",
-        "Black/African American" = "B03002_004",
-        "American Indian/Alaska Native" = "B03002_005",
-        "Asian" = "B03002_006",
-        "Native Hawaiian/Pacific Islander" = "B03002_007",
-        "Other race" = "B03002_008",
-        "Multi-Race" = "B03002_009",
-        "Hispanic/Latino" = "B03002_012"
-      )
-    )
-  
-  if (clean_variable_names == TRUE) {
-    race_ethnicity_data <- clean_names(race_ethnicity_data)
-  }
-  
-  race_ethnicity_data
-}
-
-
-# Pass Arguments to Another Function with ... -----------------------------
-
-get_acs_race_ethnicity <- function(clean_variable_names = FALSE) {
-  race_ethnicity_data <-
-    get_acs(
-      geography = "state",
-      variables = c(
-        "White" = "B03002_003",
-        "Black/African American" = "B03002_004",
-        "American Indian/Alaska Native" = "B03002_005",
-        "Asian" = "B03002_006",
-        "Native Hawaiian/Pacific Islander" = "B03002_007",
-        "Other race" = "B03002_008",
-        "Multi-Race" = "B03002_009",
-        "Hispanic/Latino" = "B03002_012"
-      )
-    )
-  
-  if (clean_variable_names == TRUE) {
-    race_ethnicity_data <- clean_names(race_ethnicity_data)
-  }
-  
-  race_ethnicity_data
-}
-
-
-
-get_acs_race_ethnicity <- function(
-    clean_variable_names = FALSE,
-    ...
-) {
-  race_ethnicity_data <-
-    get_acs(
-      ...,
-      variables = c(
-        "White" = "B03002_003",
-        "Black/African American" = "B03002_004",
-        "American Indian/Alaska Native" = "B03002_005",
-        "Asian" = "B03002_006",
-        "Native Hawaiian/Pacific Islander" = "B03002_007",
-        "Other race" = "B03002_008",
-        "Multi-Race" = "B03002_009",
-        "Hispanic/Latino" = "B03002_012"
-      )
-    )
-  
-  if (clean_variable_names == TRUE) {
-    race_ethnicity_data <- clean_names(race_ethnicity_data)
-  }
-  
-  race_ethnicity_data
-}
+orders |>
+  left_join(
+    inventory,
+    join_by(product)
+  ) |>
+  arrange(product, order_date)
