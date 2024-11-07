@@ -42,7 +42,9 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-08.html
 
 # Housekeeping {.inverse}
 
+## Houskeeping
 
+- [Please fill out check-in survey](https://forms.gle/KRLyB2AWjGNRCtEU6) if you have not already
 
 # Tidy Example Project
 
