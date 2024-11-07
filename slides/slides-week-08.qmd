@@ -46,13 +46,12 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-08.html
 
 - [Please fill out check-in survey](https://forms.gle/KRLyB2AWjGNRCtEU6) if you have not already
 
-# Tidy Example Project
+# Tidy Example Project {.inverse}
 
 ::: {.notes}
 - make demographics data frame
 - make function to import data
 - show importing multiple years of data
-- make function to work with slightly different data (2021): show doing extra steps after function and within it (show rename() not working, but use set_names() instead)
 - in report, show merging demographics data frame in
 - make function to create data viz for any year
 :::
@@ -67,7 +66,7 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-08.html
 <!-- https://book.rfortherestofus.com/packages.html -->
 <!-- ::: -->
 
-# Your Questions
+# Your Questions {.inverse}
 
 ## `case_match()` vs `case_when()`
 
@@ -77,12 +76,14 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-08.html
 
 ## Joins
 
-# Project Assignment
+- Mismatched variable types
 
+- Many-to-many joins
 
+# Project Assignment {.inverse}
 
 # Next Week
 
 - Advanced data viz, part 1
 
-- Project assignment is to tidy your data with the various functions you have learned
+- Project assignment for week 8 is to tidy your data with the various functions you have learned
