@@ -12,7 +12,7 @@ penguins |>
     "Adelie" ~ "Island 1",
     "Chinstrap" ~ "Island 2",
     "Gentoo" ~ "Island 3"
-  ))
+  )) 
 
 penguins |>
   select(species, bill_length_mm) |>
@@ -32,13 +32,12 @@ fruits <- tibble(
 prices <- tibble(
   id = c("1", "2", "3", "4"),
   price = c(0.99, 1.50, 2.00, 2.50)
-)
+) |> 
+  mutate(id = as.numeric(id))
 
 fruits |> 
   left_join(prices,
             join_by(id))
-
-
 
 # Many-to-many joins ------------------------------------------------------
 
@@ -47,7 +46,8 @@ orders <-
     order_date = c("2024-01-01", "2024-01-01", "2024-01-02"),
     product = c("apple", "apple", "banana"),
     quantity = c(5, 3, 2)
-  )
+  ) |> 
+  mutate(location = "Store A")
 
 inventory <-
   tibble(
@@ -59,6 +59,6 @@ inventory <-
 orders |>
   left_join(
     inventory,
-    join_by(product)
-  ) |>
-  arrange(product, order_date)
+    join_by(product, location)
+  ) 
+
