@@ -8,7 +8,7 @@
 <link href="slides-week-09_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="slides-week-09_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="slides-week-09_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.553">
+  <meta name="generator" content="quarto-1.5.54">
 
   <title>R in 3 Months Week 9 (Advanced Data Viz, Part 1)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -335,8 +335,8 @@
 <h1>Agenda</h1>
 <ol type="1">
 <li class="fragment"><p>Housekeeping</p></li>
-<li class="fragment"><p>Making functions for data viz</p></li>
 <li class="fragment"><p>CBEM data viz live coding</p></li>
+<li class="fragment"><p>Making functions for data viz</p></li>
 <li class="fragment"><p>Next week</p></li>
 </ol>
 <aside class="notes">
@@ -359,8 +359,8 @@
 <div class="fragment">
 <p>Remaining weeks:</p>
 <ul>
-<li class="fragment"><p>Week 10: Catch-up week (no live session or co-working session)</p></li>
-<li class="fragment"><p>Week 11: Advanced data viz, part 2</p></li>
+<li class="fragment"><p>Week 10: Advanced data viz, part 2</p></li>
+<li class="fragment"><p>Week 11: Catch-up week (no live session or co-working session)</p></li>
 <li class="fragment"><p>Week 12: Advanced Quarto</p></li>
 <li class="fragment"><p>Week 13: Final projects</p></li>
 </ul>
@@ -369,7 +369,7 @@
 
 <section id="housekeeping-1" class="title-slide slide level1 center">
 <h1>Housekeeping</h1>
-<p>You can get feedback from your coach through the end of June</p>
+<p>You can get feedback from your coach through the end of December</p>
 <div class="fragment">
 <p>You have access to materials FOREVER!</p>
 </div>
@@ -377,7 +377,25 @@
 
 <section id="advanced-data-viz" class="title-slide slide level1 inverse center">
 <h1>Advanced Data Viz</h1>
-
+<aside class="notes">
+<p>This week you learned about:</p>
+<ul>
+<li>Reordering</li>
+<li>Using color to highlight findings</li>
+<li>Adding descriptive labels</li>
+<li>Using annotations</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
 <section id="europa-data-viz-guide" class="title-slide slide level1 center">
@@ -393,9 +411,8 @@
 <section id="next-week" class="title-slide slide level1 center">
 <h1>Next Week</h1>
 <ul>
-<li class="fragment"><p>Catch-up week (no live session or co-working session)</p></li>
-<li class="fragment"><p>Week after that is advanced data viz, part 2</p></li>
-<li class="fragment"><p>Your project assignment will be to improve a previous data viz</p></li>
+<li class="fragment"><p>Advanced data viz, part 2</p></li>
+<li class="fragment"><p>Your project assignment is to improve a previous data viz</p></li>
 </ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -645,18 +662,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -688,7 +694,29 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -696,7 +724,7 @@
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

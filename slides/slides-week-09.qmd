@@ -26,9 +26,9 @@ editor_options:
 
 1. Housekeeping
 
-1. Making functions for data viz
-
 1. CBEM data viz live coding
+
+1. Making functions for data viz
 
 1. Next week
 
@@ -42,9 +42,9 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-09.html
 
 Remaining weeks:
 
-- Week 10: Catch-up week (no live session or co-working session)
+- Week 10: Advanced data viz, part 2
 
-- Week 11: Advanced data viz, part 2
+- Week 11: Catch-up week (no live session or co-working session)
 
 - Week 12: Advanced Quarto
 
@@ -52,7 +52,7 @@ Remaining weeks:
 
 # Housekeeping
 
-You can get feedback from your coach through the end of June
+You can get feedback from your coach through the end of December
 
 . . .
 
@@ -60,6 +60,15 @@ You have access to materials FOREVER!
 
 
 # Advanced Data Viz {.inverse}
+
+::: {.notes}
+This week you learned about:
+
+- Reordering
+- Using color to highlight findings
+- Adding descriptive labels
+- Using annotations
+:::
 
 # Europa Data Viz Guide
 
@@ -71,8 +80,7 @@ You have access to materials FOREVER!
 
 # Next Week
 
-- Catch-up week (no live session or co-working session)
+- Advanced data viz, part 2
 
-- Week after that is advanced data viz, part 2
+- Your project assignment is to improve a previous data viz
 
-- Your project assignment will be to improve a previous data viz
