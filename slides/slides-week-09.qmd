@@ -82,5 +82,5 @@ This week you learned about:
 
 - Advanced data viz, part 2
 
-- Your project assignment is to improve a previous data viz
+- For your project assignment, you'll work on your Quarto document and use your RDS file with your cleaned data to create new or improve your previous plots.
 
