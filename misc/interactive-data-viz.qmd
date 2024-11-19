@@ -10,7 +10,6 @@ execute:
 ```{r}
 library(tidyverse)
 library(scales)
-library(ggchicklet)
 library(ggiraph)
 ```
 
@@ -103,9 +102,7 @@ cbem_interactive_plot <-
     )
   ) +
   geom_col_interactive(
-    aes(
-      tooltip = str_glue("{group}: {percent_formatted}")
-    )
+    # Add tooltip here
   ) +
   geom_text(
     vjust = 1.5,

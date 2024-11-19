@@ -42,14 +42,16 @@ library(janitor)
 1. Next Week
 
 ::: {.notes}
-https://rin3fall2024.rfortherestofus.com/slides/slides-week-11.html
+https://rin3fall2024.rfortherestofus.com/slides/slides-week-10.html
 :::
 
 # Housekeeping
 
+1. Next week is catch-up week
+
 1. Two more weeks: Advanced Quarto and final projects
 
-1. Final project is to record a video demonstrating something you've learned ([lesson](https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/r-in-3-months-final-project))
+1. Final project is to record a video demonstrating something you've learned ([lesson](https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/r-in-3-months-final-project))
 
 # Advanced Custom Themes {.inverse}
 
@@ -90,7 +92,6 @@ https://r.geocompx.org/
 - geometry column
 :::
 
-
 # Interactive Data Viz {.inverse}
 
 ::: {.notes}
@@ -98,6 +99,12 @@ https://davidgohel.github.io/ggiraph/
 :::
 
 # Next Week
+
+- Catch-up week
+
+. . .
+
+Week of December 2:
 
 - Advanced Quarto
 
