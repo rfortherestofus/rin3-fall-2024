@@ -102,13 +102,11 @@ https://davidgohel.github.io/ggiraph/
 
 - Catch-up week
 
-. . .
-
-Week of December 2:
+# Week of December 2
 
 - Advanced Quarto
 
-- Do the lessons relevant to you and skip the rest
+- Do the lessons relevant to you (chat with Gracielle if you'd like help identifying them) and skip the rest
 
 - I'll demonstrate parameterized reporting next week in the live session so feel free to skip those lessons for now
 
