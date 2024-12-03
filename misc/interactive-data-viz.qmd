@@ -5,6 +5,8 @@ execute:
   warning: false
   message: false
   echo: false
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
@@ -22,7 +24,7 @@ cbem <-
 ## Static Plot
 
 ```{r}
- cbem |>
+cbem |>
   filter(location == "Oregon") |>
   filter(age_group == "Under 18") |>
   filter(group != "All Persons") |>
@@ -98,12 +100,11 @@ cbem_interactive_plot <-
       x = x_position,
       y = percent,
       fill = group,
-      label = percent_formatted
+      label = percent_formatted,
+      tooltip = group
     )
   ) +
-  geom_col_interactive(
-    # Add tooltip here
-  ) +
+  geom_col_interactive() +
   geom_text(
     vjust = 1.5,
     color = "white"
@@ -122,3 +123,6 @@ cbem_interactive_plot <-
 
 girafe(ggobj = cbem_interactive_plot)
 ```
+
+
+

@@ -23,20 +23,28 @@ snow_and_ice_routes <-
   read_sf("data-raw/Snow_and_Ice_Routes.geojson") |>
   clean_names()
 
+ggplot(data = snow_and_ice_routes) +
+  geom_sf()
+
 ggplot() +
-  geom_sf(data = portland_boundaries) +
+  geom_sf(
+    data = portland_boundaries
+  ) +
   geom_sf(
     data = snow_and_ice_routes,
     aes(
-      color = priority
-    ),
-    linewidth = 0.1
+      color = special_area
+    )
   ) +
   geom_sf(
     data = traffic_signals,
-    size = 0.5,
-    alpha = 0.5
-  ) 
+    aes(
+      color = is_metered
+    ),
+    alpha = 0.5,
+    size = 1
+  ) +
+  theme_void()
 
 # Tigris ------------------------------------------------------------------
 
@@ -70,15 +78,19 @@ median_income <-
 median_income |>
   ggplot(aes(fill = estimate)) +
   geom_sf() +
-  labs(fill = NULL,
-       title = "Median Household Income by County") +
+  labs(
+    fill = NULL,
+    title = "Median Household Income by County"
+  ) +
   scale_fill_viridis_c(
     option = "magma",
     labels = dollar_format()
   ) +
   theme_void() +
-  theme(plot.title = element_text(face = "bold",
-                                  hjust = 0.5))
+  theme(plot.title = element_text(
+    face = "bold",
+    hjust = 0.5
+  ))
 
 
 
@@ -91,7 +103,8 @@ iceland <-
     country = "Iceland",
     scale = "large",
     returnclass = "sf"
-  )
+  ) |> 
+  select(sovereignt)
 
 ggplot(data = iceland) +
   geom_sf()

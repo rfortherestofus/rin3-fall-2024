@@ -33,6 +33,8 @@ library(janitor)
 
 1. Housekeeping
 
+1. Dates and Times
+
 1. Advanced Quarto
 
 1. Next Week
@@ -47,9 +49,51 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-12.html
 
 1. You'll have access to course materials forever!
 
-# Advanced Quarto {.inverse}
+# Dates and Times {.inverse}
 
-## Adding Citations {.inverse}
+::: {.notes}
+```
+library(tidyverse)
+library(janitor)
+
+# https://or.water.usgs.gov/non-usgs/bes/
+# https://or.water.usgs.gov/non-usgs/bes/hayden_island.rain
+
+portland_precipitation <-
+  read_csv("data-raw/portland-precipitation.csv") |>
+  clean_names() |>
+  mutate(date = dmy(date)) |>
+  pivot_longer(
+    starts_with("x"),
+    names_to = "hour",
+    values_to = "precipitation"
+  ) |>
+  mutate(hour = parse_number(hour)) |>
+  mutate(precipitation = parse_number(precipitation)) |> 
+  mutate(date_time = make_datetime(
+    year = year(date),
+    month = month(date),
+    day = day(date),
+    hour = hour
+  )) |> 
+  mutate(precipitation = precipitation * 0.01)
+
+portland_precipitation |>
+  ggplot(
+    aes(
+      x = date_time,
+      y = precipitation
+    )
+  ) +
+  geom_col()
+```
+:::
+
+## Learn More About Dates and Times
+
+[Check out Chapter 17 of R for Data Science](https://r4ds.hadley.nz/datetimes)
+
+# Advanced Quarto {.inverse}
 
 ## Parameterized Reporting {.inverse}
 
@@ -95,10 +139,34 @@ https://housingprofiles.pschousing.org/
 
 ---
 
-## {background-video="assets/parameterized-reporting-diagram.mp4" background-video-muted="true" background-video-loop="true"}
+![](assets/parameterized-reporting-1.png)
+
+---
+
+![](assets/parameterized-reporting-2.png)
+
+---
+
+![](assets/parameterized-reporting-3.png)
+
+---
+
+![](assets/parameterized-reporting-4.png)
+
+---
+
+![](assets/parameterized-reporting-5.png)
+
+---
+
+![](assets/parameterized-reporting-6.png)
+
+---
+
+![](assets/parameterized-reporting-7.png)
 
 
-## Demonstration of Parameterized Reporting 
+## Demonstration of Parameterized Reporting {.inverse}
 
 ::: {.notes}
 Manually Create Multiple Reports
@@ -122,6 +190,33 @@ Render Multiple Reports with `quarto_render()`
 - Show `quarto_render()` with one-row tibble
 - Create `reports` tibble for all countries
 - Render multiple reports with `pwalk()`
+
+```
+library(tidyverse)
+library(palmerpenguins)
+library(quarto)
+
+quarto_render(
+  input = "report.qmd",
+  output_file = "Dream.html",
+  execute_params = list(island = "Dream")
+)
+
+islands <-
+  penguins |>
+  distinct(island) |>
+  pull(island) |>
+  as.character()
+
+reports <-
+  tibble(
+    input = "report.qmd",
+    output_file = str_glue("{islands}.html"),
+    execute_params = map(islands, ~ list(island = .))
+  )
+
+pwalk(reports, quarto_render)
+```
 :::
   
 # Next Week
