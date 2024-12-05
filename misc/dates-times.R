@@ -5,7 +5,7 @@ library(janitor)
 # https://or.water.usgs.gov/non-usgs/bes/hayden_island.rain
 
 portland_precipitation <-
-  read_csv("data-raw/portland-precipitation.csv") |> 
+  read_csv("https://raw.githubusercontent.com/rfortherestofus/rin3-fall-2024/refs/heads/main/data-raw/portland-precipitation.csv") |> 
   clean_names() |> 
   mutate(date = dmy(date)) |> 
   mutate(total = parse_number(total)) |> 
