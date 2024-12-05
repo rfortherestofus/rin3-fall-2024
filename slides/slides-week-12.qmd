@@ -45,7 +45,7 @@ https://rin3fall2024.rfortherestofus.com/slides/slides-week-12.html
   
 # Housekeeping
   
-1. Next week is the last live session, but you can get feedback through end of June
+1. Next week is the last live session, but you can get feedback through end of December
 
 1. You'll have access to course materials forever!
 
@@ -224,6 +224,8 @@ pwalk(reports, quarto_render)
 1. Surveys on your progress and on feedback for R in 3 Months
   
 1. Please complete final projects **even if you haven't completed every single lesson**
+
+1. Add info about your final project on [this Google Slides presentation](https://docs.google.com/presentation/d/1K2wRaFVK_Fxut-WkaaqIesAEXk40W7OPqchgYmf-L1I/edit?usp=sharing)
 
 1. Next week we'll talk about your progress (including showing some final projects) and discuss where you go after R in 3 Months to continue learning R
 
