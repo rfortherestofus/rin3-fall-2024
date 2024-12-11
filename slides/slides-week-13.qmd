@@ -36,6 +36,10 @@ library(janitor)
 
 2.  Where to Go From Here
 
+3. How to Ask Good (Code) Questions
+
+4. Wrapping Up
+
 ::: notes
 https://rin3fall2024.rfortherestofus.com/slides/slides-week-13.html
 :::
@@ -54,7 +58,7 @@ gs4_auth("david@rfortherestofus.com")
 
 pre_survey <- read_sheet("https://docs.google.com/spreadsheets/d/19Ny92IGg0ZzIqiLs7QywaGF-Y85HQZn1iIIXN4I_tpg/edit#gid=1201619159") |>
   clean_names() |>
-  filter(timestamp > as.Date("2024-01-01")) |>
+  filter(timestamp > as.Date("2024-09-01")) |>
   select(-what_is_your_name)
 
 pre_survey_tidy <-
@@ -66,7 +70,7 @@ pre_survey_tidy <-
 
 post_survey <- read_sheet("https://docs.google.com/spreadsheets/d/1S5g1UYyBKiUfIU3yi9M_OZs1RvedH5xPPrMhs8Sw53o/edit#gid=1400508795") |>
   clean_names() |>
-  filter(timestamp > as.Date("2024-01-01"))
+  filter(timestamp > as.Date("2024-09-01"))
 
 post_survey_tidy <- post_survey |>
   select(contains("rate"), contains("terrified")) |>
@@ -129,9 +133,13 @@ pre_post_plot(area = "scared")
 
 ## What You've Done in the Last Three Months {.inverse}
 
+::: {.notes}
+https://bit.ly/r3m-f24-graduation
+:::
+
 # Where to Go From Here {.inverse}
 
-# Rubber Duck Debugging {.inverse}
+## Rubber Duck Debugging {.inverse}
 
 ---
 
@@ -143,7 +151,7 @@ The power of talking through your code problems 🦆 💬
 
 -   Related: take two trips bringing in the groceries
 
-# Planning with Pseudo Code {.inverse}
+## Planning with Pseudo Code {.inverse}
 
 ---
 
@@ -161,7 +169,7 @@ The power of talking through your code problems 🦆 💬
 
 There are three popular question and answer communities for (R) code questions:
 
-## [stackoverflow.com](https://stackoverflow.com)
+### [stackoverflow.com](https://stackoverflow.com)
 
 -   This is a general purpose code Q&A website.
 
@@ -169,35 +177,39 @@ There are three popular question and answer communities for (R) code questions:
 
 -   It also had a [recent controversy related to selling data to OpenAI](https://www.tomshardware.com/tech-industry/artificial-intelligence/stack-overflow-bans-users-en-masse-for-rebelling-against-openai-partnership-users-banned-for-deleting-answers-to-prevent-them-being-used-to-train-chatgpt), with many users deleting answers they had previously posted
 
-## [Posit Community](https://community.rstudio.com/)
+### [Posit Community](https://community.rstudio.com/)
 
 -   This community is run by Posit and is specifically for R users.
 
 -   The admins do work to make the site a welcoming place for all users.
 
-## [Data Science Learning Community](https://dslc.io/)
+### [Data Science Learning Community](https://dslc.io/)
 
 -   Slack community that is very welcoming to newbies
 
 -   Has regular office hours where you can get 1-on-1 help
 
-## Bonus: [R-Ladies](https://rladies.org/)
+### Bonus: [R-Ladies](https://rladies.org/)
 
 -   "A worldwide organization whose mission is to promote gender diversity in the R community"
 
 -   Extremely welcoming
 
--   Have local chapters that often host events
+-   Have local chapters that often host events, and many are online
 
-## Bonus: ChatGPT + other AI tools
+### Bonus: ChatGPT + other AI tools
 
 -   The more you can specify the package you want it to use, the better results you'll have
 
-## Bonus: Conferences
+### Bonus: Conferences
+
+- [posit::conf](https://posit.co/conference/)
+
+- [useR Conference](https://events.linuxfoundation.org/user/)
 
 - [Cascadia R Conf](https://cascadiarconf.com/)
 
-- [posit::conf](https://posit.co/conference/)
+- [NYC/DC/Dublin R Conference](https://rstats.ai/)
 
 - [R Medicine Conference](https://rconsortium.github.io/RMedicine_website/)
 
@@ -253,9 +265,9 @@ How can I reorder bars on the y axis?
 
 ## R in 3 Months
 
-1.  Submit any assignments for feedback any time in June
+1.  Submit any assignments for feedback any time in December
 
-2.  Any 1-on-1s with your coaches must be completed by end of June
+2.  Any 1-on-1s with your coaches must be completed by end of December
 
 3.  Please submit final assignments whenever (we love seeing what you've done!)
 
@@ -265,6 +277,14 @@ How can I reorder bars on the y axis?
 
 1.  Topics courses (use coupon code RIN3TOPICSCOURSES to get 25% off)
 
-2.  Additional ways that R for the Rest of Us can help you and your organization
+1. Everyone has access to Using Git and GitHub with R (if you purchased it, send me an email for a refund)
+
+1.  Additional ways that R for the Rest of Us can help you and your organization
+
+::: {.notes}
+https://rfortherestofus.com/training
+
+https://rfortherestofus.com/consulting
+:::
 
 # Thank You for Being Part of R in 3 Months! {.inverse}
