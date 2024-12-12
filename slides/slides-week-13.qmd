@@ -139,9 +139,7 @@ https://bit.ly/r3m-f24-graduation
 
 # Where to Go From Here {.inverse}
 
-## Rubber Duck Debugging {.inverse}
-
----
+## Rubber Duck Debugging
 
 The power of talking through your code problems 🦆 💬
 
@@ -149,19 +147,21 @@ The power of talking through your code problems 🦆 💬
 
 -   Walk through as if the "duck" has no context
 
--   Related: take two trips bringing in the groceries
+## Break it down!
 
-## Planning with Pseudo Code {.inverse}
+![](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmY4MmFoemhtdmJsNGg4dmtwNmR4dXloemJmdnNmYmVrYWU4eDU0NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SCcfZ11oxj4D4HSKlr/giphy.gif){fig-align="center"}
 
----
+## Planning with Pseudo Code
 
--   Avoids "blank page syndrome" and chronic backtracking
+-   Use plain language **before** you code == comments!
+
+-   Avoids "blank page syndrome"
 
 -   Get to know your subject qualitatively
 
 -   Refine your analysis questions
 
--   Use plain language \*\*before\*\* you code == comments!
+
 
 ## Where to Ask Questions {.inverse}
 
