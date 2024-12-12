@@ -84,7 +84,7 @@ pre_post_data <-
     summarize(avg_response = mean(value, na.rm = TRUE)) |>
     ungroup() |>
     mutate(timing = fct_rev(timing)) |>
-    mutate(avg_response_formatted = number(avg_response, 0.1))
+    mutate(avg_response_formatted = number(avg_response, accuracy = 0.1))
 
 pre_post_plot <- function(area) {
    pre_post_data |>
@@ -107,7 +107,7 @@ pre_post_plot <- function(area) {
 ```
 
 ::: notes
-https://rfortherestofus.com/courses/r-in-3-months-spring-2024/lessons/r-in-3-months-progress-survey
+https://rfortherestofus.com/courses/r-in-3-months-fall-2024/lessons/r-in-3-months-progress-survey
 :::
 
 ## Data Analysis
@@ -177,6 +177,8 @@ There are three popular question and answer communities for (R) code questions:
 
 -   It also had a [recent controversy related to selling data to OpenAI](https://www.tomshardware.com/tech-industry/artificial-intelligence/stack-overflow-bans-users-en-masse-for-rebelling-against-openai-partnership-users-banned-for-deleting-answers-to-prevent-them-being-used-to-train-chatgpt), with many users deleting answers they had previously posted
 
+---
+
 ### [Posit Community](https://community.rstudio.com/)
 
 -   This community is run by Posit and is specifically for R users.
@@ -189,6 +191,8 @@ There are three popular question and answer communities for (R) code questions:
 
 -   Has regular office hours where you can get 1-on-1 help
 
+---
+
 ### Bonus: [R-Ladies](https://rladies.org/)
 
 -   "A worldwide organization whose mission is to promote gender diversity in the R community"
@@ -200,6 +204,8 @@ There are three popular question and answer communities for (R) code questions:
 ### Bonus: ChatGPT + other AI tools
 
 -   The more you can specify the package you want it to use, the better results you'll have
+
+---
 
 ### Bonus: Conferences
 
